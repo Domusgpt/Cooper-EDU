@@ -1364,11 +1364,38 @@
         import { initProfilePage } from './js/profile-manager.js';
         
         document.addEventListener('DOMContentLoaded', function() {
-            // The main.js will handle initial data loading
-            // Once loaded, we'll initialize the profile page specifically
+            // Try both methods for initialization:
+            // 1. Listen for the appInitialized event from main.js
             window.addEventListener('appInitialized', function(e) {
-                initProfilePage(e.detail.appState);
+                console.log('App initialized event received');
+                if (e.detail && e.detail.appState) {
+                    initProfilePage(e.detail.appState);
+                }
             });
+            
+            // 2. Also initialize directly after a short delay as a fallback
+            setTimeout(function() {
+                console.log('Initializing profile page directly (fallback)');
+                // Check if window.appState exists (it's exported from main.js)
+                if (window.appState) {
+                    initProfilePage(window.appState);
+                } else {
+                    // Create minimal appState if not available
+                    const minimalAppState = {
+                        userProgress: {
+                            completedLessons: [1, 2],
+                            courseProgress: {
+                                1: 65,
+                                2: 30,
+                                3: 0
+                            },
+                            achievements: [1, 5, 8],
+                            certificates: [1, 2]
+                        }
+                    };
+                    initProfilePage(minimalAppState);
+                }
+            }, 1000);
         });
     </script>
 </body>

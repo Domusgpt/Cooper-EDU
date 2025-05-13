@@ -405,3 +405,6 @@ document.addEventListener('DOMContentLoaded', initApp);
 
 // Export functions and state for other modules
 export { appState };
+
+// Also make appState available globally for direct access if needed
+window.appState = appState;
