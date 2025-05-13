@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Achievement pattern: Concentric shapes forming a badge/award with a star -->
+  
+  <!-- Background circle -->
+  <circle cx="150" cy="150" r="140" fill="#F9A826" fill-opacity="0.1"/>
+  
+  <!-- Decorative outer ring -->
+  <circle cx="150" cy="150" r="130" stroke="#F9A826" stroke-width="4" stroke-dasharray="15 5" fill="none"/>
+  
+  <!-- Inner hexagon -->
+  <path d="M150 40L240 95L240 205L150 260L60 205L60 95L150 40Z" fill="#F9A826" fill-opacity="0.2" stroke="#F9A826" stroke-width="3"/>
+  
+  <!-- Star shape in center -->
+  <path d="M150 80L171.5 124.7H219.3L180.9 152.6L193.4 196.3L150 166.4L106.6 196.3L119.1 152.6L80.7 124.7H128.5L150 80Z" fill="#F9A826" stroke="#F9A826" stroke-width="2"/>
+  
+  <!-- Decorative dots -->
+  <circle cx="60" cy="95" r="6" fill="#F9A826"/>
+  <circle cx="60" cy="205" r="6" fill="#F9A826"/>
+  <circle cx="150" cy="40" r="6" fill="#F9A826"/>
+  <circle cx="150" cy="260" r="6" fill="#F9A826"/>
+  <circle cx="240" cy="95" r="6" fill="#F9A826"/>
+  <circle cx="240" cy="205" r="6" fill="#F9A826"/>
+  
+  <!-- Small accent stars -->
+  <path d="M50 140L55 150L65 153L55 156L50 166L45 156L35 153L45 150L50 140Z" fill="#F9A826" fill-opacity="0.8"/>
+  <path d="M250 140L255 150L265 153L255 156L250 166L245 156L235 153L245 150L250 140Z" fill="#F9A826" fill-opacity="0.8"/>
+  <path d="M100 50L105 60L115 63L105 66L100 76L95 66L85 63L95 60L100 50Z" fill="#F9A826" fill-opacity="0.8"/>
+  <path d="M200 50L205 60L215 63L205 66L200 76L195 66L185 63L195 60L200 50Z" fill="#F9A826" fill-opacity="0.8"/>
+  <path d="M100 230L105 240L115 243L105 246L100 256L95 246L85 243L95 240L100 230Z" fill="#F9A826" fill-opacity="0.8"/>
+  <path d="M200 230L205 240L215 243L205 246L200 256L195 246L185 243L195 240L200 230Z" fill="#F9A826" fill-opacity="0.8"/>
+</svg>

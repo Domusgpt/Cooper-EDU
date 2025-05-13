@@ -59,7 +59,7 @@ async function loadCourses() {
   }
   
   try {
-    const response = await fetch('/data/courses.json');
+    const response = await fetch('./data/courses.json');
     if (!response.ok) {
       throw new Error(`Failed to load courses: ${response.status} ${response.statusText}`);
     }
@@ -88,7 +88,7 @@ async function loadLessons() {
   }
   
   try {
-    const response = await fetch('/data/lessons.json');
+    const response = await fetch('./data/lessons.json');
     if (!response.ok) {
       throw new Error(`Failed to load lessons: ${response.status} ${response.statusText}`);
     }
@@ -117,7 +117,7 @@ async function loadQuizzes() {
   }
   
   try {
-    const response = await fetch('/data/quizzes.json');
+    const response = await fetch('./data/quizzes.json');
     if (!response.ok) {
       throw new Error(`Failed to load quizzes: ${response.status} ${response.statusText}`);
     }
@@ -146,7 +146,7 @@ async function loadAchievements() {
   }
   
   try {
-    const response = await fetch('/data/achievements.json');
+    const response = await fetch('./data/achievements.json');
     if (!response.ok) {
       throw new Error(`Failed to load achievements: ${response.status} ${response.statusText}`);
     }

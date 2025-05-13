@@ -120,7 +120,7 @@
         "points": 10
       }
     ],
-    "pattern": "pattern1"
+    "pattern": "knowledge.svg"
   },
   {
     "id": 2,
@@ -296,6 +296,6 @@
         "points": 5
       }
     ],
-    "pattern": "pattern1"
+    "pattern": "knowledge.svg"
   }
 ]

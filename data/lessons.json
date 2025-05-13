@@ -47,7 +47,7 @@
       }
     ],
     "completed": true,
-    "pattern": "pattern1"
+    "pattern": "knowledge.svg"
   },
   {
     "id": 2,
@@ -126,7 +126,7 @@
       }
     ],
     "completed": true,
-    "pattern": "pattern1"
+    "pattern": "knowledge.svg"
   },
   {
     "id": 3,
@@ -215,6 +215,6 @@
       }
     ],
     "completed": false,
-    "pattern": "pattern1"
+    "pattern": "knowledge.svg"
   }
 ]
