@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Learning Platform - My Profile</title>
+    <link rel="stylesheet" href="css/_variables.css">
+    <link rel="stylesheet" href="css/_typography.css">
+    <link rel="stylesheet" href="css/_components.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .profile-container {
+            max-width: var(--container-lg);
+            margin: 0 auto;
+            padding: var(--spacing-8);
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-6);
+            margin-bottom: var(--spacing-8);
+            padding-bottom: var(--spacing-6);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: var(--color-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: white;
+            font-weight: var(--font-weight-bold);
+        }
+
+        .profile-info h1 {
+            margin-bottom: var(--spacing-1);
+        }
+
+        .profile-info p {
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-2);
+        }
+
+        .profile-stats {
+            display: flex;
+            gap: var(--spacing-6);
+            margin-top: var(--spacing-4);
+        }
+
+        .profile-stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-stat-value {
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+        }
+
+        .profile-stat-label {
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+        }
+
+        .profile-sections {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-8);
+        }
+
+        .profile-section {
+            background-color: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-6);
+            box-shadow: var(--shadow-base);
+        }
+
+        .profile-section h2 {
+            margin-top: 0;
+            margin-bottom: var(--spacing-6);
+            padding-bottom: var(--spacing-3);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .profile-section h3 {
+            margin-top: var(--spacing-6);
+            margin-bottom: var(--spacing-4);
+        }
+
+        .profile-progress__stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: var(--spacing-4);
+            margin-bottom: var(--spacing-6);
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--spacing-6);
+        }
+
+        .course-progress-card {
+            position: relative;
+            background-color: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-base);
+            padding: var(--spacing-4);
+            overflow: hidden;
+        }
+
+        .course-progress-card__pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+        }
+
+        .course-progress-card__title {
+            margin-top: var(--spacing-3);
+            margin-bottom: var(--spacing-4);
+        }
+
+        .course-progress-card__progress {
+            margin-bottom: var(--spacing-4);
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: var(--spacing-4);
+            margin-bottom: var(--spacing-6);
+        }
+
+        .achievement-card {
+            position: relative;
+            background-color: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-4);
+            box-shadow: var(--shadow-base);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .achievement-card__pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+        }
+
+        .achievement-card__icon {
+            font-size: 32px;
+            margin: var(--spacing-3) 0;
+        }
+
+        .achievement-card__title {
+            margin-bottom: var(--spacing-2);
+            font-size: var(--font-size-md);
+        }
+
+        .achievement-card__description {
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-3);
+        }
+
+        .achievement-card__points {
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
+            font-size: var(--font-size-sm);
+        }
+
+        .achievement-card--locked {
+            opacity: 0.7;
+        }
+
+        .achievement-card--locked .achievement-card__description {
+            color: var(--text-tertiary);
+        }
+
+        @media (min-width: 992px) {
+            .profile-sections {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-stats {
+                justify-content: center;
+            }
+
+            .profile-avatar {
+                width: 100px;
+                height: 100px;
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <h1>Learning Platform</h1>
+        </div>
+        <nav class="header__nav">
+            <ul class="nav-list">
+                <li class="nav-list__item"><a href="index.html">Dashboard</a></li>
+                <li class="nav-list__item"><a href="course-catalog.html">Courses</a></li>
+                <li class="nav-list__item nav-list__item--active"><a href="profile.html">My Profile</a></li>
+            </ul>
+        </nav>
+        <div class="header__user">
+            <span class="user-name">User Name</span>
+            <div class="user-avatar"></div>
+        </div>
+    </header>
+
+    <main class="profile-container">
+        <div class="profile-header">
+            <div class="profile-avatar">D</div>
+            <div class="profile-info">
+                <h1 class="user-name">Demo User</h1>
+                <p>demo@example.com</p>
+                <p>Member since <time datetime="2025-01-15">January 15, 2025</time></p>
+                
+                <div class="profile-stats">
+                    <div class="profile-stat">
+                        <div class="profile-stat-value">325</div>
+                        <div class="profile-stat-label">Total Points</div>
+                    </div>
+                    <div class="profile-stat">
+                        <div class="profile-stat-value">12</div>
+                        <div class="profile-stat-label">Completed Lessons</div>
+                    </div>
+                    <div class="profile-stat">
+                        <div class="profile-stat-value">5</div>
+                        <div class="profile-stat-label">Achievements</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-sections">
+            <div class="profile-section profile-progress">
+                <!-- Learning progress will be dynamically populated here -->
+            </div>
+            
+            <div class="profile-section profile-achievements">
+                <!-- Achievements will be dynamically populated here -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <p>&copy; 2025 Interactive Learning Platform</p>
+            <nav class="footer__nav">
+                <ul class="footer-nav-list">
+                    <li class="footer-nav-list__item"><a href="#">Help</a></li>
+                    <li class="footer-nav-list__item"><a href="#">Privacy</a></li>
+                    <li class="footer-nav-list__item"><a href="#">Terms</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- JavaScript files -->
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>

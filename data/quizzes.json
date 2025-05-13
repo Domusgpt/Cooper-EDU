@@ -1,0 +1,301 @@
+[
+  {
+    "id": 1,
+    "courseId": 1,
+    "title": "HTML & CSS Fundamentals",
+    "description": "Test your knowledge of basic HTML and CSS concepts.",
+    "timeLimit": 20,
+    "passingScore": 70,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "Which HTML tag is used for creating a hyperlink?",
+        "options": [
+          "<link>",
+          "<a>",
+          "<href>",
+          "<url>"
+        ],
+        "correctAnswer": 1,
+        "points": 10
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "Which CSS property is used to change the text color of an element?",
+        "options": [
+          "text-color",
+          "font-color",
+          "color",
+          "text-style"
+        ],
+        "correctAnswer": 2,
+        "points": 10
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "Which HTML element is used to define the structure of an HTML document?",
+        "options": [
+          "<body>",
+          "<head>",
+          "<div>",
+          "<html>"
+        ],
+        "correctAnswer": 3,
+        "points": 10
+      },
+      {
+        "id": 4,
+        "type": "multiple-choice",
+        "question": "Which CSS property is used to add space between HTML elements?",
+        "options": [
+          "spacing",
+          "margin",
+          "padding",
+          "gap"
+        ],
+        "correctAnswer": 1,
+        "points": 10
+      },
+      {
+        "id": 5,
+        "type": "true-false",
+        "question": "The <img> tag in HTML requires a closing tag.",
+        "correctAnswer": false,
+        "points": 10
+      },
+      {
+        "id": 6,
+        "type": "true-false",
+        "question": "CSS stands for Cascading Style Sheets.",
+        "correctAnswer": true,
+        "points": 10
+      },
+      {
+        "id": 7,
+        "type": "multiple-choice",
+        "question": "Which CSS selector targets an element with id='header'?",
+        "options": [
+          ".header",
+          "#header",
+          "header",
+          "*header"
+        ],
+        "correctAnswer": 1,
+        "points": 10
+      },
+      {
+        "id": 8,
+        "type": "multiple-choice",
+        "question": "Which HTML tag is used to define an unordered list?",
+        "options": [
+          "<ol>",
+          "<ul>",
+          "<li>",
+          "<list>"
+        ],
+        "correctAnswer": 1,
+        "points": 10
+      },
+      {
+        "id": 9,
+        "type": "true-false",
+        "question": "CSS can be added to HTML elements in three ways: inline, internal, and external.",
+        "correctAnswer": true,
+        "points": 10
+      },
+      {
+        "id": 10,
+        "type": "multiple-choice",
+        "question": "Which of the following is NOT a valid CSS unit?",
+        "options": [
+          "px",
+          "em",
+          "rem",
+          "dm"
+        ],
+        "correctAnswer": 3,
+        "points": 10
+      }
+    ],
+    "pattern": "pattern1"
+  },
+  {
+    "id": 2,
+    "courseId": 1,
+    "title": "Final Assessment",
+    "description": "Comprehensive test covering all aspects of web development fundamentals.",
+    "timeLimit": 45,
+    "passingScore": 75,
+    "questions": [
+      {
+        "id": 1,
+        "type": "multiple-choice",
+        "question": "Which HTML5 element should be used for navigation links?",
+        "options": [
+          "<nav>",
+          "<navigation>",
+          "<links>",
+          "<menu>"
+        ],
+        "correctAnswer": 0,
+        "points": 5
+      },
+      {
+        "id": 2,
+        "type": "multiple-choice",
+        "question": "What does the CSS 'box-sizing: border-box' property do?",
+        "options": [
+          "It makes all boxes square-shaped",
+          "It includes padding and border in the element's total width and height",
+          "It removes all borders from the element",
+          "It creates a box around the element's border"
+        ],
+        "correctAnswer": 1,
+        "points": 5
+      },
+      {
+        "id": 3,
+        "type": "multiple-choice",
+        "question": "Which JavaScript method is used to access an HTML element by its ID?",
+        "options": [
+          "document.getElementByName()",
+          "document.getElement()",
+          "document.getElementById()",
+          "document.findElement()"
+        ],
+        "correctAnswer": 2,
+        "points": 5
+      },
+      {
+        "id": 4,
+        "type": "true-false",
+        "question": "The CSS property 'display: none' hides an element but it still takes up space on the page.",
+        "correctAnswer": false,
+        "points": 5
+      },
+      {
+        "id": 5,
+        "type": "multiple-choice",
+        "question": "Which of the following is NOT a valid way to declare a JavaScript variable?",
+        "options": [
+          "var x = 5;",
+          "let x = 5;",
+          "const x = 5;",
+          "variable x = 5;"
+        ],
+        "correctAnswer": 3,
+        "points": 5
+      },
+      {
+        "id": 6,
+        "type": "code-completion",
+        "question": "Complete the following JavaScript function that checks if a number is even:",
+        "codePrefix": "function isEven(number) {\n  return ",
+        "codeSuffix": ";\n}",
+        "correctAnswer": "number % 2 === 0",
+        "points": 10
+      },
+      {
+        "id": 7,
+        "type": "code-completion",
+        "question": "Complete the following CSS rule to center an element horizontally and vertically using flexbox:",
+        "codePrefix": ".center {\n  display: flex;\n  ",
+        "codeSuffix": "\n}",
+        "correctAnswer": "justify-content: center;\n  align-items: center;",
+        "points": 10
+      },
+      {
+        "id": 8,
+        "type": "multiple-choice",
+        "question": "Which CSS property creates a flexible box layout?",
+        "options": [
+          "flex",
+          "display: flex",
+          "flexbox",
+          "box-flex"
+        ],
+        "correctAnswer": 1,
+        "points": 5
+      },
+      {
+        "id": 9,
+        "type": "true-false",
+        "question": "In JavaScript, '==' compares values while '===' compares both values and types.",
+        "correctAnswer": true,
+        "points": 5
+      },
+      {
+        "id": 10,
+        "type": "multiple-choice",
+        "question": "Which HTML attribute is used to make input fields required?",
+        "options": [
+          "required",
+          "mandatory",
+          "validate",
+          "necessary"
+        ],
+        "correctAnswer": 0,
+        "points": 5
+      },
+      {
+        "id": 11,
+        "type": "multiple-choice",
+        "question": "What does the 'z-index' CSS property control?",
+        "options": [
+          "The width of the element",
+          "The stacking order of elements",
+          "The zoom level of the element",
+          "The size of the element on the z-axis"
+        ],
+        "correctAnswer": 1,
+        "points": 5
+      },
+      {
+        "id": 12,
+        "type": "code-completion",
+        "question": "Complete the following HTML code to create a responsive image:",
+        "codePrefix": "<img src=\"image.jpg\" ",
+        "codeSuffix": ">",
+        "correctAnswer": "alt=\"Description\" class=\"responsive\" style=\"max-width: 100%; height: auto;\"",
+        "points": 10
+      },
+      {
+        "id": 13,
+        "type": "multiple-choice",
+        "question": "Which of the following is a JavaScript framework?",
+        "options": [
+          "CSS",
+          "HTML5",
+          "React",
+          "Bootstrap"
+        ],
+        "correctAnswer": 2,
+        "points": 5
+      },
+      {
+        "id": 14,
+        "type": "true-false",
+        "question": "Media queries are used in CSS to make a web page responsive.",
+        "correctAnswer": true,
+        "points": 5
+      },
+      {
+        "id": 15,
+        "type": "multiple-choice",
+        "question": "What is the correct HTML for creating a form input field for an email address?",
+        "options": [
+          "<input type=\"email\">",
+          "<input type=\"mail\">",
+          "<input type=\"address\">",
+          "<input type=\"email-address\">"
+        ],
+        "correctAnswer": 0,
+        "points": 5
+      }
+    ],
+    "pattern": "pattern1"
+  }
+]

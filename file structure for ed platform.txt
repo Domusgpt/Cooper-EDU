@@ -1,0 +1,35 @@
+learning-platform/
+├── index.html
+├── course-catalog.html
+├── course-detail.html
+├── lesson.html
+├── quiz.html
+├── profile.html
+├── css/
+│   ├── style.css
+│   ├── _variables.css
+│   ├── _typography.css
+│   ├── _components.css
+│   ├── _animations.css
+│   └── _progress.css
+├── js/
+│   ├── main.js
+│   ├── course-navigator.js
+│   ├── interaction-engine.js
+│   ├── quiz-system.js
+│   ├── progress-tracker.js
+│   └── pattern-integration.js
+├── data/
+│   ├── courses.json
+│   ├── lessons.json
+│   ├── quizzes.json
+│   └── achievements.json
+├── assets/
+│   ├── patterns/
+│   │   ├── knowledge.svg
+│   │   └── achievement.svg
+│   ├── images/
+│   ├── icons/
+│   └── fonts/
+├── README.md
+└── CLAUDE.md

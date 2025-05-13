@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Learning Platform - Course Catalog</title>
+    <link rel="stylesheet" href="css/_variables.css">
+    <link rel="stylesheet" href="css/_typography.css">
+    <link rel="stylesheet" href="css/_components.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <h1>Learning Platform</h1>
+        </div>
+        <nav class="header__nav">
+            <ul class="nav-list">
+                <li class="nav-list__item"><a href="index.html">Dashboard</a></li>
+                <li class="nav-list__item nav-list__item--active"><a href="course-catalog.html">Courses</a></li>
+                <li class="nav-list__item"><a href="profile.html">My Profile</a></li>
+            </ul>
+        </nav>
+        <div class="header__user">
+            <span class="user-name">User Name</span>
+            <div class="user-avatar"></div>
+        </div>
+    </header>
+
+    <main class="catalog">
+        <section class="catalog__hero">
+            <h2>Explore Our Courses</h2>
+            <p>Discover learning paths designed to help you achieve your goals.</p>
+        </section>
+
+        <section class="catalog__filters">
+            <div class="filter-container">
+                <div class="search-box">
+                    <input type="text" placeholder="Search courses..." class="search-box__input">
+                    <button class="search-box__button">Search</button>
+                </div>
+                
+                <div class="filter-options">
+                    <div class="filter-group">
+                        <label for="category" class="filter-group__label">Category</label>
+                        <select id="category" class="filter-group__select">
+                            <option value="all">All Categories</option>
+                            <option value="web-development">Web Development</option>
+                            <option value="data-science">Data Science</option>
+                            <option value="design">Design</option>
+                            <option value="business">Business</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="difficulty" class="filter-group__label">Difficulty</label>
+                        <select id="difficulty" class="filter-group__select">
+                            <option value="all">All Levels</option>
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="duration" class="filter-group__label">Duration</label>
+                        <select id="duration" class="filter-group__select">
+                            <option value="all">Any Duration</option>
+                            <option value="short">Short (< 2 hours)</option>
+                            <option value="medium">Medium (2-5 hours)</option>
+                            <option value="long">Long (> 5 hours)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="catalog__courses">
+            <div class="courses-grid">
+                <!-- Course cards will be dynamically populated from data/courses.json -->
+                
+                <div class="course-card">
+                    <div class="course-card__pattern"></div>
+                    <div class="course-card__content">
+                        <div class="course-card__header">
+                            <h3 class="course-card__title">Web Development Fundamentals</h3>
+                            <span class="course-card__difficulty">Beginner</span>
+                        </div>
+                        <p class="course-card__description">Learn the core technologies that power the web: HTML, CSS, and JavaScript. Build your first responsive website from scratch.</p>
+                        <div class="course-card__meta">
+                            <span class="course-card__lessons">12 Lessons</span>
+                            <span class="course-card__duration">4 Hours</span>
+                        </div>
+                        <div class="course-card__footer">
+                            <a href="course-detail.html?id=1" class="button button--primary">View Course</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-card__pattern"></div>
+                    <div class="course-card__content">
+                        <div class="course-card__header">
+                            <h3 class="course-card__title">Data Science Essentials</h3>
+                            <span class="course-card__difficulty">Intermediate</span>
+                        </div>
+                        <p class="course-card__description">Master the fundamentals of data analysis, visualization, and machine learning. Work with real-world datasets to solve complex problems.</p>
+                        <div class="course-card__meta">
+                            <span class="course-card__lessons">15 Lessons</span>
+                            <span class="course-card__duration">6 Hours</span>
+                        </div>
+                        <div class="course-card__footer">
+                            <a href="course-detail.html?id=2" class="button button--primary">View Course</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-card__pattern"></div>
+                    <div class="course-card__content">
+                        <div class="course-card__header">
+                            <h3 class="course-card__title">UX Design Principles</h3>
+                            <span class="course-card__difficulty">Beginner</span>
+                        </div>
+                        <p class="course-card__description">Learn the principles of user-centered design. Create intuitive interfaces that delight users and solve real problems.</p>
+                        <div class="course-card__meta">
+                            <span class="course-card__lessons">10 Lessons</span>
+                            <span class="course-card__duration">3.5 Hours</span>
+                        </div>
+                        <div class="course-card__footer">
+                            <a href="course-detail.html?id=3" class="button button--primary">View Course</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-card__pattern"></div>
+                    <div class="course-card__content">
+                        <div class="course-card__header">
+                            <h3 class="course-card__title">Advanced JavaScript Concepts</h3>
+                            <span class="course-card__difficulty">Advanced</span>
+                        </div>
+                        <p class="course-card__description">Take your JavaScript skills to the next level. Learn advanced patterns, asynchronous programming, and modern ES6+ features.</p>
+                        <div class="course-card__meta">
+                            <span class="course-card__lessons">14 Lessons</span>
+                            <span class="course-card__duration">5 Hours</span>
+                        </div>
+                        <div class="course-card__footer">
+                            <a href="course-detail.html?id=4" class="button button--primary">View Course</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-card__pattern"></div>
+                    <div class="course-card__content">
+                        <div class="course-card__header">
+                            <h3 class="course-card__title">Responsive Web Design</h3>
+                            <span class="course-card__difficulty">Intermediate</span>
+                        </div>
+                        <p class="course-card__description">Master the art of creating websites that look and function beautifully on any device. Learn modern CSS techniques and best practices.</p>
+                        <div class="course-card__meta">
+                            <span class="course-card__lessons">8 Lessons</span>
+                            <span class="course-card__duration">3 Hours</span>
+                        </div>
+                        <div class="course-card__footer">
+                            <a href="course-detail.html?id=5" class="button button--primary">View Course</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-card__pattern"></div>
+                    <div class="course-card__content">
+                        <div class="course-card__header">
+                            <h3 class="course-card__title">Business Analytics Fundamentals</h3>
+                            <span class="course-card__difficulty">Beginner</span>
+                        </div>
+                        <p class="course-card__description">Learn how to analyze business data to drive decision making. Master essential tools and techniques for business intelligence.</p>
+                        <div class="course-card__meta">
+                            <span class="course-card__lessons">11 Lessons</span>
+                            <span class="course-card__duration">4 Hours</span>
+                        </div>
+                        <div class="course-card__footer">
+                            <a href="course-detail.html?id=6" class="button button--primary">View Course</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="catalog__pagination">
+            <div class="pagination">
+                <button class="pagination__button pagination__button--prev" disabled>Previous</button>
+                <div class="pagination__numbers">
+                    <a href="#" class="pagination__number pagination__number--active">1</a>
+                    <a href="#" class="pagination__number">2</a>
+                    <a href="#" class="pagination__number">3</a>
+                </div>
+                <button class="pagination__button pagination__button--next">Next</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <p>&copy; 2025 Interactive Learning Platform</p>
+            <nav class="footer__nav">
+                <ul class="footer-nav-list">
+                    <li class="footer-nav-list__item"><a href="#">Help</a></li>
+                    <li class="footer-nav-list__item"><a href="#">Privacy</a></li>
+                    <li class="footer-nav-list__item"><a href="#">Terms</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- JavaScript files -->
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>

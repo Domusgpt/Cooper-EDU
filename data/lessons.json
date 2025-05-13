@@ -1,0 +1,220 @@
+[
+  {
+    "id": 1,
+    "courseId": 1,
+    "title": "Introduction to HTML",
+    "number": 1,
+    "duration": 25,
+    "content": [
+      {
+        "type": "text",
+        "content": "<h2>What is HTML?</h2><p>HTML (HyperText Markup Language) is the standard markup language for creating web pages. It defines the structure and content of a webpage using various elements represented by tags.</p>"
+      },
+      {
+        "type": "key-point",
+        "title": "Key Point",
+        "content": "HTML is the skeleton of every web page you see on the internet. It provides the structure that is then styled with CSS and made interactive with JavaScript."
+      },
+      {
+        "type": "text",
+        "content": "<h2>Basic Structure of an HTML Document</h2><p>Every HTML document follows a basic structure that includes doctype declaration, html, head, and body elements.</p>"
+      },
+      {
+        "type": "code",
+        "language": "html",
+        "content": "<!DOCTYPE html>\n<html>\n<head>\n    <title>My First Webpage</title>\n</head>\n<body>\n    <h1>Hello, World!</h1>\n    <p>This is my first webpage.</p>\n</body>\n</html>"
+      },
+      {
+        "type": "interactive-code",
+        "description": "Try it yourself",
+        "starterCode": "<!DOCTYPE html>\n<html>\n<head>\n    <title>My Page</title>\n</head>\n<body>\n    <!-- Write your code here -->\n    \n</body>\n</html>",
+        "solutionCode": "<!DOCTYPE html>\n<html>\n<head>\n    <title>My Page</title>\n</head>\n<body>\n    <h1>Welcome to my page</h1>\n    <p>This is a paragraph of text.</p>\n</body>\n</html>"
+      },
+      {
+        "type": "check-understanding",
+        "question": "Which tag is used to define the main content area of an HTML document?",
+        "options": [
+          "<head>",
+          "<content>",
+          "<body>",
+          "<main>"
+        ],
+        "correctAnswer": 2,
+        "feedback": {
+          "correct": "That's right! The <body> tag contains all the content that you want to show to web visitors, such as text, images, tables, forms, etc.",
+          "incorrect": "Not quite. The <body> tag is the container for all visible content in an HTML document."
+        }
+      }
+    ],
+    "completed": true,
+    "pattern": "pattern1"
+  },
+  {
+    "id": 2,
+    "courseId": 1,
+    "title": "HTML Document Structure",
+    "number": 2,
+    "duration": 30,
+    "content": [
+      {
+        "type": "text",
+        "content": "<h2>HTML Elements</h2><p>HTML elements are the building blocks of HTML pages. They are represented by tags, written using angle brackets.</p>"
+      },
+      {
+        "type": "text",
+        "content": "<h2>HTML Tags</h2><p>Most HTML elements have an opening tag and a closing tag, with content in between.</p>"
+      },
+      {
+        "type": "code",
+        "language": "html",
+        "content": "<tagname>Content goes here...</tagname>"
+      },
+      {
+        "type": "key-point",
+        "title": "Key Point",
+        "content": "Some HTML elements are 'self-closing' and don't need a closing tag, such as <img>, <br>, and <input>."
+      },
+      {
+        "type": "text",
+        "content": "<h2>HTML Attributes</h2><p>HTML attributes provide additional information about HTML elements and are always specified in the opening tag.</p>"
+      },
+      {
+        "type": "code",
+        "language": "html",
+        "content": "<tagname attribute='value'>Content goes here...</tagname>"
+      },
+      {
+        "type": "interactive-matching",
+        "title": "Match HTML Elements with Their Purpose",
+        "pairs": [
+          {
+            "item": "<h1> to <h6>",
+            "match": "Headings (h1 is the most important)"
+          },
+          {
+            "item": "<p>",
+            "match": "Paragraph"
+          },
+          {
+            "item": "<a>",
+            "match": "Hyperlink"
+          },
+          {
+            "item": "<img>",
+            "match": "Image"
+          },
+          {
+            "item": "<ul> and <li>",
+            "match": "Unordered list and list item"
+          }
+        ]
+      },
+      {
+        "type": "check-understanding",
+        "question": "Which HTML attribute specifies an alternate text for an image if the image cannot be displayed?",
+        "options": [
+          "src",
+          "alt",
+          "title",
+          "href"
+        ],
+        "correctAnswer": 1,
+        "feedback": {
+          "correct": "Correct! The alt attribute provides alternative information for an image if a user cannot view it (due to slow connection, error, or if the user uses a screen reader).",
+          "incorrect": "Incorrect. The alt attribute provides alternative text for an image if it cannot be displayed."
+        }
+      }
+    ],
+    "completed": true,
+    "pattern": "pattern1"
+  },
+  {
+    "id": 3,
+    "courseId": 1,
+    "title": "Introduction to CSS",
+    "number": 3,
+    "duration": 30,
+    "content": [
+      {
+        "type": "text",
+        "content": "<h2>What is CSS?</h2><p>CSS (Cascading Style Sheets) is a stylesheet language used to describe the presentation of a document written in HTML. CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.</p>"
+      },
+      {
+        "type": "key-point",
+        "title": "Key Point",
+        "content": "CSS is responsible for the visual aspects of web pages, while HTML handles the structure and content."
+      },
+      {
+        "type": "text",
+        "content": "<h2>CSS Syntax</h2><p>CSS consists of a selector and a declaration block. The selector points to the HTML element you want to style, and the declaration block contains one or more declarations separated by semicolons.</p>"
+      },
+      {
+        "type": "code",
+        "language": "css",
+        "content": "selector {\n  property: value;\n  property: value;\n}"
+      },
+      {
+        "type": "interactive-code",
+        "description": "Try it yourself",
+        "starterCode": "/* Style the body element */\nbody {\n  \n}\n\n/* Style all paragraph elements */\np {\n  \n}",
+        "solutionCode": "/* Style the body element */\nbody {\n  background-color: #f0f0f0;\n  font-family: Arial, sans-serif;\n}\n\n/* Style all paragraph elements */\np {\n  color: #333333;\n  line-height: 1.6;\n}"
+      },
+      {
+        "type": "text",
+        "content": "<h2>CSS Selectors</h2><p>CSS selectors are used to \"find\" or select HTML elements based on their element name, id, class, attribute, and more.</p>"
+      },
+      {
+        "type": "table",
+        "headers": ["Selector", "Example", "Description"],
+        "rows": [
+          [".class", ".intro", "Selects all elements with class=\"intro\""],
+          ["#id", "#firstname", "Selects the element with id=\"firstname\""],
+          ["element", "p", "Selects all <p> elements"]
+        ]
+      },
+      {
+        "type": "interactive-matching",
+        "title": "Selector Matching Game",
+        "pairs": [
+          {
+            "item": "p",
+            "match": "Selects all paragraph elements"
+          },
+          {
+            "item": ".header",
+            "match": "Selects all elements with class=\"header\""
+          },
+          {
+            "item": "#main",
+            "match": "Selects the element with id=\"main\""
+          },
+          {
+            "item": "div > p",
+            "match": "Selects all p elements that are direct children of a div element"
+          },
+          {
+            "item": "a:hover",
+            "match": "Selects links on mouse over"
+          }
+        ]
+      },
+      {
+        "type": "check-understanding",
+        "question": "Which of the following is the correct CSS syntax?",
+        "options": [
+          "body [color: black;]",
+          "{body: color=black;}",
+          "body {color: black;}",
+          "body:color=black;"
+        ],
+        "correctAnswer": 2,
+        "feedback": {
+          "correct": "Correct! The proper CSS syntax includes the selector followed by curly braces containing property:value pairs.",
+          "incorrect": "Not quite. The proper CSS syntax is: selector {property: value;}"
+        }
+      }
+    ],
+    "completed": false,
+    "pattern": "pattern1"
+  }
+]

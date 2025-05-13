@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Learning Platform - Dashboard</title>
+    <link rel="stylesheet" href="css/_variables.css">
+    <link rel="stylesheet" href="css/_typography.css">
+    <link rel="stylesheet" href="css/_components.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <h1>Learning Platform</h1>
+        </div>
+        <nav class="header__nav">
+            <ul class="nav-list">
+                <li class="nav-list__item nav-list__item--active"><a href="index.html">Dashboard</a></li>
+                <li class="nav-list__item"><a href="course-catalog.html">Courses</a></li>
+                <li class="nav-list__item"><a href="profile.html">My Profile</a></li>
+            </ul>
+        </nav>
+        <div class="header__user">
+            <span class="user-name">User Name</span>
+            <div class="user-avatar"></div>
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <section class="dashboard__welcome">
+            <h2>Welcome back, <span class="user-name">User</span>!</h2>
+            <p>Continue where you left off or explore new learning paths.</p>
+        </section>
+
+        <section class="dashboard__learning-paths">
+            <div class="section-header">
+                <h2>Learning Paths</h2>
+                <a href="course-catalog.html" class="button button--secondary">View All</a>
+            </div>
+            <div class="learning-paths__container">
+                <!-- Learning paths will be dynamically populated from data/courses.json -->
+                <div class="learning-path-card">
+                    <div class="learning-path-card__pattern"></div>
+                    <h3 class="learning-path-card__title">Web Development Fundamentals</h3>
+                    <div class="learning-path-card__progress">
+                        <div class="progress-bar">
+                            <div class="progress-bar__fill" style="width: 65%;"></div>
+                        </div>
+                        <span class="progress-bar__text">65% Complete</span>
+                    </div>
+                    <a href="course-detail.html?id=1" class="button button--primary">Continue</a>
+                </div>
+                
+                <div class="learning-path-card">
+                    <div class="learning-path-card__pattern"></div>
+                    <h3 class="learning-path-card__title">Data Science Essentials</h3>
+                    <div class="learning-path-card__progress">
+                        <div class="progress-bar">
+                            <div class="progress-bar__fill" style="width: 30%;"></div>
+                        </div>
+                        <span class="progress-bar__text">30% Complete</span>
+                    </div>
+                    <a href="course-detail.html?id=2" class="button button--primary">Continue</a>
+                </div>
+                
+                <div class="learning-path-card">
+                    <div class="learning-path-card__pattern"></div>
+                    <h3 class="learning-path-card__title">UX Design Principles</h3>
+                    <div class="learning-path-card__progress">
+                        <div class="progress-bar">
+                            <div class="progress-bar__fill" style="width: 0%;"></div>
+                        </div>
+                        <span class="progress-bar__text">Not Started</span>
+                    </div>
+                    <a href="course-detail.html?id=3" class="button button--primary">Start</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="dashboard__progress-overview">
+            <div class="section-header">
+                <h2>Progress Overview</h2>
+            </div>
+            <div class="progress-overview__container">
+                <div class="progress-overview__stats">
+                    <div class="stat-card">
+                        <div class="stat-card__icon"></div>
+                        <div class="stat-card__value">3</div>
+                        <div class="stat-card__label">Courses in Progress</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card__icon"></div>
+                        <div class="stat-card__value">12</div>
+                        <div class="stat-card__label">Lessons Completed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card__icon"></div>
+                        <div class="stat-card__value">5</div>
+                        <div class="stat-card__label">Achievements Earned</div>
+                    </div>
+                </div>
+                
+                <div class="progress-overview__recent">
+                    <h3>Recent Activity</h3>
+                    <ul class="activity-list">
+                        <li class="activity-list__item">
+                            <span class="activity-time">Today</span>
+                            <span class="activity-description">Completed "Introduction to CSS" lesson</span>
+                        </li>
+                        <li class="activity-list__item">
+                            <span class="activity-time">Yesterday</span>
+                            <span class="activity-description">Earned "HTML Master" achievement</span>
+                        </li>
+                        <li class="activity-list__item">
+                            <span class="activity-time">2 days ago</span>
+                            <span class="activity-description">Started "Data Science Essentials" course</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="dashboard__recommended">
+            <div class="section-header">
+                <h2>Recommended For You</h2>
+            </div>
+            <div class="recommended__container">
+                <!-- Recommended courses will be dynamically populated based on user progress -->
+                <div class="course-card">
+                    <div class="course-card__pattern"></div>
+                    <h3 class="course-card__title">Advanced JavaScript Concepts</h3>
+                    <p class="course-card__description">Take your JavaScript skills to the next level with advanced concepts and patterns.</p>
+                    <a href="course-detail.html?id=4" class="button button--primary">View Course</a>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-card__pattern"></div>
+                    <h3 class="course-card__title">Responsive Web Design</h3>
+                    <p class="course-card__description">Learn how to create websites that look great on any device.</p>
+                    <a href="course-detail.html?id=5" class="button button--primary">View Course</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <p>&copy; 2025 Interactive Learning Platform</p>
+            <nav class="footer__nav">
+                <ul class="footer-nav-list">
+                    <li class="footer-nav-list__item"><a href="#">Help</a></li>
+                    <li class="footer-nav-list__item"><a href="#">Privacy</a></li>
+                    <li class="footer-nav-list__item"><a href="#">Terms</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- JavaScript files -->
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>

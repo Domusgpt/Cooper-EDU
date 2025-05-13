@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "title": "HTML Master",
+    "description": "Complete all HTML lessons with 90% or higher quiz scores",
+    "type": "course-completion",
+    "criteria": {
+      "courseId": 1,
+      "lessonIds": [1, 2],
+      "minQuizScore": 90
+    },
+    "pattern": "pattern1",
+    "image": "html-master.svg",
+    "points": 100,
+    "unlockedAt": "2025-05-12T15:30:00Z"
+  },
+  {
+    "id": 2,
+    "title": "CSS Wizard",
+    "description": "Master the fundamentals of CSS styling",
+    "type": "lesson-completion",
+    "criteria": {
+      "courseId": 1,
+      "lessonIds": [3, 4, 5, 10]
+    },
+    "pattern": "pattern2",
+    "image": "css-wizard.svg",
+    "points": 75,
+    "unlockedAt": null
+  },
+  {
+    "id": 3,
+    "title": "JavaScript Novice",
+    "description": "Complete your first JavaScript lessons",
+    "type": "lesson-completion",
+    "criteria": {
+      "courseId": 1,
+      "lessonIds": [6, 7]
+    },
+    "pattern": "pattern3",
+    "image": "js-novice.svg",
+    "points": 50,
+    "unlockedAt": null
+  },
+  {
+    "id": 4,
+    "title": "Web Developer Apprentice",
+    "description": "Complete the Web Development Fundamentals course",
+    "type": "course-completion",
+    "criteria": {
+      "courseId": 1,
+      "minQuizScore": 75
+    },
+    "pattern": "pattern4",
+    "image": "web-dev-apprentice.svg",
+    "points": 150,
+    "unlockedAt": null
+  },
+  {
+    "id": 5,
+    "title": "Fast Learner",
+    "description": "Complete 3 lessons in a single day",
+    "type": "activity",
+    "criteria": {
+      "lessonCompletedInOneDay": 3
+    },
+    "pattern": "pattern5",
+    "image": "fast-learner.svg",
+    "points": 30,
+    "unlockedAt": "2025-05-11T18:45:00Z"
+  },
+  {
+    "id": 6,
+    "title": "Perfect Quiz",
+    "description": "Score 100% on any quiz",
+    "type": "quiz",
+    "criteria": {
+      "score": 100
+    },
+    "pattern": "pattern6",
+    "image": "perfect-quiz.svg",
+    "points": 50,
+    "unlockedAt": null
+  },
+  {
+    "id": 7,
+    "title": "Coding Streak",
+    "description": "Learn for 5 consecutive days",
+    "type": "streak",
+    "criteria": {
+      "days": 5
+    },
+    "pattern": "pattern7",
+    "image": "coding-streak.svg",
+    "points": 75,
+    "unlockedAt": null
+  },
+  {
+    "id": 8,
+    "title": "First Steps",
+    "description": "Complete your first lesson",
+    "type": "lesson-completion",
+    "criteria": {
+      "lessonCount": 1
+    },
+    "pattern": "pattern8",
+    "image": "first-steps.svg",
+    "points": 10,
+    "unlockedAt": "2025-05-10T14:20:00Z"
+  },
+  {
+    "id": 9,
+    "title": "Knowledge Seeker",
+    "description": "Explore and start at least 3 different courses",
+    "type": "course-exploration",
+    "criteria": {
+      "courseCount": 3
+    },
+    "pattern": "pattern9",
+    "image": "knowledge-seeker.svg",
+    "points": 40,
+    "unlockedAt": null
+  },
+  {
+    "id": 10,
+    "title": "Interactive Learner",
+    "description": "Complete 10 interactive exercises",
+    "type": "interaction",
+    "criteria": {
+      "interactionCount": 10
+    },
+    "pattern": "pattern10",
+    "image": "interactive-learner.svg",
+    "points": 60,
+    "unlockedAt": null
+  }
+]

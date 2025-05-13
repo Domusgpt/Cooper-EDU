@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Learning Platform - Lesson</title>
+    <link rel="stylesheet" href="css/_variables.css">
+    <link rel="stylesheet" href="css/_typography.css">
+    <link rel="stylesheet" href="css/_components.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">
+            <h1>Learning Platform</h1>
+        </div>
+        <nav class="header__nav">
+            <ul class="nav-list">
+                <li class="nav-list__item"><a href="index.html">Dashboard</a></li>
+                <li class="nav-list__item"><a href="course-catalog.html">Courses</a></li>
+                <li class="nav-list__item"><a href="profile.html">My Profile</a></li>
+            </ul>
+        </nav>
+        <div class="header__user">
+            <span class="user-name">User Name</span>
+            <div class="user-avatar"></div>
+        </div>
+    </header>
+
+    <main class="lesson-container">
+        <aside class="lesson-sidebar">
+            <div class="course-info">
+                <div class="course-info__pattern"></div>
+                <h2 class="course-info__title">Web Development Fundamentals</h2>
+                <div class="course-info__progress">
+                    <div class="progress-bar">
+                        <div class="progress-bar__fill" style="width: 65%;"></div>
+                    </div>
+                    <span class="progress-bar__text">65% Complete</span>
+                </div>
+            </div>
+            
+            <nav class="lesson-navigation">
+                <h3 class="lesson-navigation__title">Course Content</h3>
+                <ul class="lesson-list">
+                    <li class="lesson-list__item lesson-list__item--completed">
+                        <a href="lesson.html?course=1&lesson=1">1. Introduction to HTML</a>
+                    </li>
+                    <li class="lesson-list__item lesson-list__item--completed">
+                        <a href="lesson.html?course=1&lesson=2">2. HTML Document Structure</a>
+                    </li>
+                    <li class="lesson-list__item lesson-list__item--active">
+                        <a href="lesson.html?course=1&lesson=3">3. Introduction to CSS</a>
+                    </li>
+                    <li class="lesson-list__item">
+                        <a href="lesson.html?course=1&lesson=4">4. CSS Box Model</a>
+                    </li>
+                    <li class="lesson-list__item">
+                        <a href="lesson.html?course=1&lesson=5">5. Responsive Design Basics</a>
+                    </li>
+                    <li class="lesson-list__item">
+                        <a href="lesson.html?course=1&lesson=6">6. Introduction to JavaScript</a>
+                    </li>
+                    <li class="lesson-list__item">
+                        <a href="lesson.html?course=1&lesson=7">7. DOM Manipulation</a>
+                    </li>
+                    <li class="lesson-list__item">
+                        <a href="lesson.html?course=1&lesson=8">8. Building Interactive Elements</a>
+                    </li>
+                    <li class="lesson-list__item">
+                        <a href="quiz.html?course=1&quiz=1">
+                            <span class="quiz-indicator">Quiz:</span> HTML & CSS Fundamentals
+                        </a>
+                    </li>
+                    <li class="lesson-list__item">
+                        <a href="lesson.html?course=1&lesson=9">9. Forms and User Input</a>
+                    </li>
+                    <li class="lesson-list__item">
+                        <a href="lesson.html?course=1&lesson=10">10. CSS Layouts</a>
+                    </li>
+                    <li class="lesson-list__item">
+                        <a href="lesson.html?course=1&lesson=11">11. JavaScript Events</a>
+                    </li>
+                    <li class="lesson-list__item">
+                        <a href="lesson.html?course=1&lesson=12">12. Final Project</a>
+                    </li>
+                    <li class="lesson-list__item">
+                        <a href="quiz.html?course=1&quiz=2">
+                            <span class="quiz-indicator">Quiz:</span> Final Assessment
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <article class="lesson-content">
+            <header class="lesson-header">
+                <div class="lesson-header__top">
+                    <div class="lesson-pattern"></div>
+                    <div class="lesson-meta">
+                        <span class="lesson-number">Lesson 3</span>
+                        <span class="lesson-duration">30 minutes</span>
+                    </div>
+                </div>
+                <h1 class="lesson-title">Introduction to CSS</h1>
+            </header>
+
+            <div class="lesson-body">
+                <!-- Lesson content will be dynamically loaded from data/lessons.json -->
+                <section class="lesson-section">
+                    <h2>What is CSS?</h2>
+                    <p>CSS (Cascading Style Sheets) is a stylesheet language used to describe the presentation of a document written in HTML. CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.</p>
+                    
+                    <div class="key-point">
+                        <div class="key-point__icon"></div>
+                        <div class="key-point__content">
+                            <h3>Key Point</h3>
+                            <p>CSS is responsible for the visual aspects of web pages, while HTML handles the structure and content.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="lesson-section">
+                    <h2>CSS Syntax</h2>
+                    <p>CSS consists of a selector and a declaration block. The selector points to the HTML element you want to style, and the declaration block contains one or more declarations separated by semicolons.</p>
+                    
+                    <div class="code-example">
+                        <h3>Example</h3>
+                        <pre><code>selector {
+  property: value;
+  property: value;
+}</code></pre>
+                    </div>
+                    
+                    <!-- Interactive element: Code editor -->
+                    <div class="interactive-element interactive-code-editor">
+                        <h3>Try it yourself</h3>
+                        <div class="code-editor">
+                            <textarea class="code-editor__input" placeholder="/* Write your CSS here */"></textarea>
+                            <div class="code-editor__buttons">
+                                <button class="button button--primary run-code-button">Run Code</button>
+                                <button class="button button--secondary reset-code-button">Reset</button>
+                            </div>
+                        </div>
+                        <div class="code-editor__preview">
+                            <div class="preview-box">Preview will appear here</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="lesson-section">
+                    <h2>CSS Selectors</h2>
+                    <p>CSS selectors are used to "find" or select HTML elements based on their element name, id, class, attribute, and more.</p>
+                    
+                    <div class="table-container">
+                        <table class="content-table">
+                            <thead>
+                                <tr>
+                                    <th>Selector</th>
+                                    <th>Example</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>.class</td>
+                                    <td>.intro</td>
+                                    <td>Selects all elements with class="intro"</td>
+                                </tr>
+                                <tr>
+                                    <td>#id</td>
+                                    <td>#firstname</td>
+                                    <td>Selects the element with id="firstname"</td>
+                                </tr>
+                                <tr>
+                                    <td>element</td>
+                                    <td>p</td>
+                                    <td>Selects all &lt;p&gt; elements</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Interactive element: Matching game -->
+                    <div class="interactive-element interactive-matching-game">
+                        <h3>Selector Matching Game</h3>
+                        <p>Match the selector with the correct description</p>
+                        <div class="matching-game">
+                            <div class="matching-game__container">
+                                <!-- Matching game will be implemented with JavaScript -->
+                                <div class="matching-game__placeholder">Interactive matching game will appear here</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="lesson-check">
+                    <h2>Check Your Understanding</h2>
+                    
+                    <div class="question-container">
+                        <div class="question">
+                            <p>Which of the following is the correct CSS syntax?</p>
+                            <div class="options">
+                                <label class="option">
+                                    <input type="radio" name="question1" value="a">
+                                    <span class="option__text">body [color: black;]</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="question1" value="b">
+                                    <span class="option__text">{body: color=black;}</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="question1" value="c">
+                                    <span class="option__text">body {color: black;}</span>
+                                </label>
+                                <label class="option">
+                                    <input type="radio" name="question1" value="d">
+                                    <span class="option__text">body:color=black;</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="question-feedback" style="display: none;">
+                            <div class="question-feedback__correct">
+                                <p>Correct! The proper CSS syntax includes the selector followed by curly braces containing property:value pairs.</p>
+                            </div>
+                            <div class="question-feedback__incorrect">
+                                <p>Not quite. The proper CSS syntax is: selector {property: value;}</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="lesson-summary">
+                    <h2>Summary</h2>
+                    <ul class="summary-list">
+                        <li>CSS stands for Cascading Style Sheets</li>
+                        <li>CSS is used to style HTML elements</li>
+                        <li>CSS syntax consists of a selector and declaration block</li>
+                        <li>CSS selectors target HTML elements based on element name, id, class, or attributes</li>
+                    </ul>
+                    
+                    <div class="pattern-visualization">
+                        <div class="pattern-visualization__container">
+                            <!-- Pattern visualization will be implemented with JavaScript -->
+                            <div class="pattern-visualization__placeholder">Knowledge visualization pattern will appear here</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <footer class="lesson-footer">
+                <div class="lesson-navigation-buttons">
+                    <a href="lesson.html?course=1&lesson=2" class="button button--secondary">Previous: HTML Document Structure</a>
+                    <a href="lesson.html?course=1&lesson=4" class="button button--primary">Next: CSS Box Model</a>
+                </div>
+                
+                <div class="lesson-completion">
+                    <button class="button button--success mark-completed-button">Mark as Completed</button>
+                </div>
+            </footer>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <p>&copy; 2025 Interactive Learning Platform</p>
+            <nav class="footer__nav">
+                <ul class="footer-nav-list">
+                    <li class="footer-nav-list__item"><a href="#">Help</a></li>
+                    <li class="footer-nav-list__item"><a href="#">Privacy</a></li>
+                    <li class="footer-nav-list__item"><a href="#">Terms</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- JavaScript files -->
+    <script src="js/main.js" type="module"></script>
+    <script src="js/interaction-engine.js" type="module"></script>
+    <script src="js/pattern-integration.js" type="module"></script>
+</body>
+</html>
