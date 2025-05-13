@@ -3,327 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cooper Educational Platform - Business Leadership & Project Management</title>
+    <title>Cooper Leadership Academy - Business Leadership & Project Management</title>
     <link rel="stylesheet" href="css/_variables.css">
     <link rel="stylesheet" href="css/_typography.css">
     <link rel="stylesheet" href="css/_components.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/enhanced-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Inline critical styles to ensure basic styling works */
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            color: #212121;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-            line-height: 1.5;
-        }
-        
-        .header {
-            background-color: #4361ee;
-            color: white;
-            padding: 1rem 2rem;
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            background-color: #e67e22;
+            border-radius: 50%;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        
-        .header__logo h1 {
-            margin: 0;
-            font-size: 1.5rem;
-        }
-        
-        .nav-list {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .nav-list__item {
-            margin-left: 1.5rem;
-        }
-        
-        .nav-list__item a {
+            justify-content: center;
             color: white;
-            text-decoration: none;
-            font-weight: 500;
+            font-weight: bold;
         }
         
-        .nav-list__item--active a {
-            border-bottom: 2px solid white;
-            padding-bottom: 3px;
-        }
-        
-        .dashboard {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        .dashboard__welcome {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-        
-        .section-header {
+        .header__logo {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            margin-bottom: 1rem;
-        }
-        
-        .learning-paths__container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .learning-path-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .learning-path-card__pattern {
-            height: 8px;
-            background-color: #4361ee;
-        }
-        
-        .learning-path-card__title {
-            padding: 1.5rem 1.5rem 0;
-            margin-top: 0;
-        }
-        
-        .learning-path-card__progress {
-            padding: 0 1.5rem 1rem;
-        }
-        
-        .progress-bar {
-            height: 8px;
-            background-color: #e0e0e0;
-            border-radius: 4px;
-            overflow: hidden;
-            margin-bottom: 0.5rem;
-        }
-        
-        .progress-bar__fill {
-            height: 100%;
-            background-color: #4361ee;
-        }
-        
-        .button {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background-color: #4361ee;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-weight: 500;
-            text-decoration: none;
-            cursor: pointer;
-            margin: 0.5rem 1.5rem 1.5rem;
-            text-align: center;
-        }
-        
-        .button--secondary {
-            background-color: #f5f5f5;
-            color: #4361ee;
-            border: 1px solid #4361ee;
-        }
-        
-        .progress-overview__container {
-            display: grid;
-            grid-template-columns: 2fr 3fr;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        .progress-overview__stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
             gap: 1rem;
         }
         
-        .stat-card {
-            background-color: white;
-            padding: 1.5rem;
+        .logo-image {
+            width: 40px;
+            height: 40px;
             border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
         
-        .stat-card__value {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #4361ee;
-            margin: 0.5rem 0;
+        /* Icon backgrounds */
+        .stat-card:nth-child(1) .stat-card__icon {
+            background: url('assets/images/leadership-icon.svg') no-repeat center center;
+            background-size: contain;
         }
         
-        .progress-overview__recent {
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        .stat-card:nth-child(2) .stat-card__icon {
+            background: url('assets/images/leadership-icon.svg') no-repeat center center;
+            background-size: contain;
         }
         
-        .activity-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .activity-list__item {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid #f0f0f0;
-            display: flex;
-            align-items: center;
-        }
-        
-        .activity-time {
-            font-size: 0.875rem;
-            color: #757575;
-            margin-right: 1rem;
-            min-width: 80px;
-        }
-        
-        .recommended__container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        .course-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .course-card__pattern {
-            height: 8px;
-            background-color: #ff5e78;
-        }
-        
-        .course-card__title {
-            padding: 1.5rem 1.5rem 0;
-            margin-top: 0;
-        }
-        
-        .course-card__description {
-            padding: 0 1.5rem;
-            margin-bottom: 1rem;
-            color: #616161;
-        }
-        
-        .footer {
-            background-color: #212121;
-            color: white;
-            padding: 2rem;
-        }
-        
-        .footer__content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .footer-nav-list {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .footer-nav-list__item {
-            margin-left: 1.5rem;
-        }
-        
-        .footer-nav-list__item a {
-            color: #bdbdbd;
-            text-decoration: none;
-        }
-        
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 1rem;
-            }
-            
-            .header__nav {
-                width: 100%;
-                margin: 1rem 0;
-            }
-            
-            .header__user {
-                width: 100%;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-            
-            .nav-list {
-                width: 100%;
-                justify-content: space-between;
-            }
-            
-            .nav-list__item {
-                margin-left: 0;
-            }
-            
-            .dashboard {
-                padding: 1rem;
-            }
-            
-            .progress-overview__container {
-                grid-template-columns: 1fr;
-            }
-            
-            .progress-overview__stats {
-                grid-template-columns: 1fr 1fr 1fr;
-            }
-            
-            .footer__content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .footer-nav-list {
-                margin-top: 1rem;
-                justify-content: center;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .learning-paths__container,
-            .recommended__container {
-                grid-template-columns: 1fr;
-            }
-            
-            .progress-overview__stats {
-                grid-template-columns: 1fr;
-                gap: 0.5rem;
-            }
+        .stat-card:nth-child(3) .stat-card__icon {
+            background: url('assets/images/leadership-icon.svg') no-repeat center center;
+            background-size: contain;
         }
     </style>
 </head>
 <body>
     <header class="header">
         <div class="header__logo">
-            <h1>Cooper Business Leadership Platform</h1>
+            <img src="assets/images/leadership-icon.svg" alt="Cooper Leadership Academy Logo" class="logo-image">
+            <h1>Cooper Leadership Academy</h1>
         </div>
         <nav class="header__nav">
             <ul class="nav-list">
@@ -333,24 +66,43 @@
             </ul>
         </nav>
         <div class="header__user">
-            <span class="user-name">User Name</span>
-            <div class="user-avatar"></div>
+            <span class="user-name">Jane Cooper</span>
+            <div class="user-avatar">JC</div>
         </div>
     </header>
 
     <main class="dashboard">
+        <div class="featured-course">
+            <div class="featured-course__title">Strategic Leadership Certification</div>
+            <div class="featured-course__description">
+                Our flagship program for aspiring leaders. Master the core competencies of strategic thinking, team building, and organizational leadership to drive business growth.
+            </div>
+            <div class="featured-course__meta">
+                <div class="featured-course__meta-item">
+                    <span>8 Weeks</span>
+                </div>
+                <div class="featured-course__meta-item">
+                    <span>Advanced</span>
+                </div>
+                <div class="featured-course__meta-item">
+                    <span>Certification</span>
+                </div>
+            </div>
+            <a href="course-detail.html?id=1" class="featured-course__cta">Enroll Now</a>
+        </div>
+
         <section class="dashboard__welcome">
-            <h2>Welcome back, <span class="user-name">User</span>!</h2>
-            <p>Continue your leadership and management development journey with our specialized business courses.</p>
+            <h2>Welcome back, <span class="user-name">Jane</span>!</h2>
+            <p>Continue your leadership and management development journey with our specialized business courses. You've completed 65% of your current learning path.</p>
         </section>
 
         <section class="dashboard__learning-paths">
             <div class="section-header">
-                <h2>Leadership Development Paths</h2>
+                <h2 class="section-title">Leadership Development Paths</h2>
                 <a href="course-catalog.html" class="button button--secondary">View All</a>
             </div>
             <div class="learning-paths__container">
-                <!-- Learning paths will be dynamically populated from data/courses.json -->
+                <!-- Learning paths populated with business leadership focus -->
                 <div class="learning-path-card">
                     <div class="learning-path-card__pattern"></div>
                     <h3 class="learning-path-card__title">Strategic Leadership Fundamentals</h3>
@@ -360,6 +112,7 @@
                         </div>
                         <span class="progress-bar__text">65% Complete</span>
                     </div>
+                    <p class="course-card__description">Master core leadership principles to inspire teams and drive organizational success.</p>
                     <a href="course-detail.html?id=1" class="button button--primary">Continue</a>
                 </div>
                 
@@ -372,6 +125,7 @@
                         </div>
                         <span class="progress-bar__text">30% Complete</span>
                     </div>
+                    <p class="course-card__description">Learn enterprise-grade methodologies to deliver complex projects on time and within budget.</p>
                     <a href="course-detail.html?id=2" class="button button--primary">Continue</a>
                 </div>
                 
@@ -384,6 +138,7 @@
                         </div>
                         <span class="progress-bar__text">Not Started</span>
                     </div>
+                    <p class="course-card__description">Master financial analysis techniques for data-driven business decisions.</p>
                     <a href="course-detail.html?id=3" class="button button--primary">Start</a>
                 </div>
             </div>
@@ -391,7 +146,7 @@
 
         <section class="dashboard__progress-overview">
             <div class="section-header">
-                <h2>Progress Overview</h2>
+                <h2 class="section-title">Progress Overview</h2>
             </div>
             <div class="progress-overview__container">
                 <div class="progress-overview__stats">
@@ -432,12 +187,58 @@
             </div>
         </section>
 
+        <section class="testimonials">
+            <div class="section-header">
+                <h2 class="section-title">What Our Students Say</h2>
+            </div>
+            <div class="testimonials__container">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        The Strategic Leadership program transformed my approach to team management. I've implemented the frameworks from this course and seen measurable improvements in team performance and morale.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author__avatar"></div>
+                        <div class="testimonial-author__info">
+                            <div class="testimonial-author__name">Michael Johnson</div>
+                            <div class="testimonial-author__title">Marketing Director, TechCorp</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        After completing the Project Management certification, I secured a promotion within three months. The practical knowledge and frameworks have been invaluable in my day-to-day role.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author__avatar"></div>
+                        <div class="testimonial-author__info">
+                            <div class="testimonial-author__name">Sarah Williams</div>
+                            <div class="testimonial-author__title">Senior PM, FinanceGroup</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        The flexible learning format allowed me to balance my executive role while upgrading my leadership skills. Worth every minute invested - my team has noticed the difference.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author__avatar"></div>
+                        <div class="testimonial-author__info">
+                            <div class="testimonial-author__name">David Chen</div>
+                            <div class="testimonial-author__title">COO, Retail Innovations</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="dashboard__recommended">
             <div class="section-header">
-                <h2>Recommended For You</h2>
+                <h2 class="section-title">Recommended For You</h2>
             </div>
             <div class="recommended__container">
-                <!-- Recommended courses will be dynamically populated based on user progress -->
+                <!-- Recommended courses with business leadership focus -->
                 <div class="course-card">
                     <div class="course-card__pattern"></div>
                     <h3 class="course-card__title">Strategic Negotiation Mastery</h3>
@@ -457,7 +258,7 @@
 
     <footer class="footer">
         <div class="footer__content">
-            <p>&copy; 2025 Cooper Business Leadership Platform</p>
+            <p>&copy; 2025 Cooper Leadership Academy</p>
             <nav class="footer__nav">
                 <ul class="footer-nav-list">
                     <li class="footer-nav-list__item"><a href="#">Help</a></li>

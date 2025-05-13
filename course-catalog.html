@@ -3,16 +3,340 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Learning Platform - Course Catalog</title>
+    <title>Course Catalog - Cooper Leadership Academy</title>
     <link rel="stylesheet" href="css/_variables.css">
     <link rel="stylesheet" href="css/_typography.css">
     <link rel="stylesheet" href="css/_components.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/enhanced-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            background-color: #e67e22;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .header__logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo-image {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+        }
+        
+        .catalog-hero {
+            background: linear-gradient(to right, rgba(44, 62, 80, 0.9), rgba(52, 73, 94, 0.8)), url('assets/images/leadership-hero.svg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .catalog-hero__title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .catalog-hero__subtitle {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+        
+        .catalog-filters {
+            background-color: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .filter-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .search-box {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .search-box__input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        
+        .search-box__button {
+            padding: 0.75rem 1.5rem;
+            background-color: var(--color-primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        
+        .filter-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .filter-group {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .filter-group__label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #555;
+        }
+        
+        .filter-group__select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 1rem;
+            background-color: white;
+        }
+        
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .course-card {
+            display: flex;
+            flex-direction: column;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.07), 0 10px 15px -5px rgba(0, 0, 0, 0.03);
+        }
+        
+        .course-card__pattern {
+            height: 8px;
+            background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%);
+        }
+        
+        .course-card__content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .course-card__header {
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        
+        .course-card__title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            margin: 0;
+        }
+        
+        .course-card__difficulty {
+            font-size: 0.75rem;
+            background-color: rgba(44, 62, 80, 0.1);
+            color: var(--color-primary);
+            padding: 0.25rem 0.5rem;
+            border-radius: 999px;
+            font-weight: 500;
+        }
+        
+        .course-card__difficulty.beginner {
+            background-color: rgba(46, 204, 113, 0.1);
+            color: #27ae60;
+        }
+        
+        .course-card__difficulty.intermediate {
+            background-color: rgba(52, 152, 219, 0.1);
+            color: #2980b9;
+        }
+        
+        .course-card__difficulty.advanced {
+            background-color: rgba(231, 76, 60, 0.1);
+            color: #c0392b;
+        }
+        
+        .course-card__description {
+            color: #666;
+            font-size: 0.9375rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+        
+        .course-card__meta {
+            display: flex;
+            gap: 1.5rem;
+            color: #777;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .course-card__footer {
+            margin-top: auto;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .pagination__button {
+            padding: 0.5rem 1rem;
+            background-color: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        
+        .pagination__button:disabled {
+            opacity: 0.5;
+            cursor: default;
+        }
+        
+        .pagination__numbers {
+            display: flex;
+            gap: 0.5rem;
+            margin: 0 1rem;
+        }
+        
+        .pagination__number {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+        }
+        
+        .pagination__number--active {
+            background-color: var(--color-primary);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .catalog-hero {
+                padding: 3rem 1rem;
+            }
+            
+            .catalog-hero__title {
+                font-size: 2rem;
+            }
+            
+            .filter-options {
+                flex-direction: column;
+            }
+            
+            .filter-group {
+                width: 100%;
+            }
+            
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* New sections */
+        .catalog-headline {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+        
+        .featured-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .category-card {
+            background-color: white;
+            border-radius: 12px;
+            text-align: center;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-card__icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background-color: rgba(44, 62, 80, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .category-card__title {
+            font-weight: 600;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .category-card__count {
+            font-size: 0.875rem;
+            color: #777;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
         <div class="header__logo">
-            <h1>Learning Platform</h1>
+            <img src="assets/images/leadership-icon.svg" alt="Cooper Leadership Academy Logo" class="logo-image">
+            <h1>Cooper Leadership Academy</h1>
         </div>
         <nav class="header__nav">
             <ul class="nav-list">
@@ -22,189 +346,239 @@
             </ul>
         </nav>
         <div class="header__user">
-            <span class="user-name">User Name</span>
-            <div class="user-avatar"></div>
+            <span class="user-name">Jane Cooper</span>
+            <div class="user-avatar">JC</div>
         </div>
     </header>
 
     <main class="catalog">
-        <section class="catalog__hero">
-            <h2>Explore Our Courses</h2>
-            <p>Discover learning paths designed to help you achieve your goals.</p>
-        </section>
+        <div class="catalog-hero">
+            <h1 class="catalog-hero__title">Explore Our Leadership Courses</h1>
+            <p class="catalog-hero__subtitle">Discover specialized programs designed to elevate your leadership abilities, enhance project management skills, and accelerate your career growth.</p>
+        </div>
 
-        <section class="catalog__filters">
-            <div class="filter-container">
-                <div class="search-box">
-                    <input type="text" placeholder="Search courses..." class="search-box__input">
-                    <button class="search-box__button">Search</button>
+        <div class="container">
+            <h2 class="catalog-headline">Browse By Category</h2>
+            
+            <div class="featured-categories">
+                <div class="category-card">
+                    <div class="category-card__icon">
+                        <img src="assets/images/leadership-icon.svg" alt="Leadership" width="30" height="30">
+                    </div>
+                    <h3 class="category-card__title">Leadership</h3>
+                    <div class="category-card__count">12 Courses</div>
                 </div>
                 
-                <div class="filter-options">
-                    <div class="filter-group">
-                        <label for="category" class="filter-group__label">Category</label>
-                        <select id="category" class="filter-group__select">
-                            <option value="all">All Categories</option>
-                            <option value="web-development">Web Development</option>
-                            <option value="data-science">Data Science</option>
-                            <option value="design">Design</option>
-                            <option value="business">Business</option>
-                        </select>
+                <div class="category-card">
+                    <div class="category-card__icon">
+                        <img src="assets/images/leadership-icon.svg" alt="Project Management" width="30" height="30">
+                    </div>
+                    <h3 class="category-card__title">Project Management</h3>
+                    <div class="category-card__count">8 Courses</div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-card__icon">
+                        <img src="assets/images/leadership-icon.svg" alt="Finance" width="30" height="30">
+                    </div>
+                    <h3 class="category-card__title">Finance</h3>
+                    <div class="category-card__count">6 Courses</div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-card__icon">
+                        <img src="assets/images/leadership-icon.svg" alt="Strategy" width="30" height="30">
+                    </div>
+                    <h3 class="category-card__title">Strategy</h3>
+                    <div class="category-card__count">9 Courses</div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-card__icon">
+                        <img src="assets/images/leadership-icon.svg" alt="Communication" width="30" height="30">
+                    </div>
+                    <h3 class="category-card__title">Communication</h3>
+                    <div class="category-card__count">7 Courses</div>
+                </div>
+            </div>
+
+            <section class="catalog-filters">
+                <div class="filter-container">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search courses..." class="search-box__input">
+                        <button class="search-box__button">Search</button>
                     </div>
                     
-                    <div class="filter-group">
-                        <label for="difficulty" class="filter-group__label">Difficulty</label>
-                        <select id="difficulty" class="filter-group__select">
-                            <option value="all">All Levels</option>
-                            <option value="beginner">Beginner</option>
-                            <option value="intermediate">Intermediate</option>
-                            <option value="advanced">Advanced</option>
-                        </select>
+                    <div class="filter-options">
+                        <div class="filter-group">
+                            <label for="category" class="filter-group__label">Category</label>
+                            <select id="category" class="filter-group__select">
+                                <option value="all">All Categories</option>
+                                <option value="leadership">Leadership</option>
+                                <option value="project-management">Project Management</option>
+                                <option value="finance">Finance</option>
+                                <option value="strategy">Strategy</option>
+                                <option value="communication">Communication</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="difficulty" class="filter-group__label">Difficulty</label>
+                            <select id="difficulty" class="filter-group__select">
+                                <option value="all">All Levels</option>
+                                <option value="beginner">Beginner</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="advanced">Advanced</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="duration" class="filter-group__label">Duration</label>
+                            <select id="duration" class="filter-group__select">
+                                <option value="all">Any Duration</option>
+                                <option value="short">Short (< 2 hours)</option>
+                                <option value="medium">Medium (2-5 hours)</option>
+                                <option value="long">Long (> 5 hours)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="catalog__courses">
+                <div class="section-header">
+                    <h2 class="section-title">All Courses</h2>
+                </div>
+                
+                <div class="courses-grid">
+                    <!-- Course cards populated with business leadership focus -->
+                    <div class="course-card">
+                        <div class="course-card__pattern"></div>
+                        <div class="course-card__content">
+                            <div class="course-card__header">
+                                <h3 class="course-card__title">Strategic Leadership Fundamentals</h3>
+                                <span class="course-card__difficulty beginner">Beginner</span>
+                            </div>
+                            <p class="course-card__description">Master core leadership principles to inspire teams, make decisive strategic choices, and drive organizational success in complex business environments.</p>
+                            <div class="course-card__meta">
+                                <span class="course-card__lessons">12 Lessons</span>
+                                <span class="course-card__duration">4 Hours</span>
+                            </div>
+                            <div class="course-card__footer">
+                                <a href="course-detail.html?id=1" class="button button--primary">View Course</a>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="filter-group">
-                        <label for="duration" class="filter-group__label">Duration</label>
-                        <select id="duration" class="filter-group__select">
-                            <option value="all">Any Duration</option>
-                            <option value="short">Short (< 2 hours)</option>
-                            <option value="medium">Medium (2-5 hours)</option>
-                            <option value="long">Long (> 5 hours)</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="catalog__courses">
-            <div class="courses-grid">
-                <!-- Course cards will be dynamically populated from data/courses.json -->
-                
-                <div class="course-card">
-                    <div class="course-card__pattern"></div>
-                    <div class="course-card__content">
-                        <div class="course-card__header">
-                            <h3 class="course-card__title">Web Development Fundamentals</h3>
-                            <span class="course-card__difficulty">Beginner</span>
-                        </div>
-                        <p class="course-card__description">Learn the core technologies that power the web: HTML, CSS, and JavaScript. Build your first responsive website from scratch.</p>
-                        <div class="course-card__meta">
-                            <span class="course-card__lessons">12 Lessons</span>
-                            <span class="course-card__duration">4 Hours</span>
-                        </div>
-                        <div class="course-card__footer">
-                            <a href="course-detail.html?id=1" class="button button--primary">View Course</a>
+                    <div class="course-card">
+                        <div class="course-card__pattern"></div>
+                        <div class="course-card__content">
+                            <div class="course-card__header">
+                                <h3 class="course-card__title">Advanced Project Management</h3>
+                                <span class="course-card__difficulty intermediate">Intermediate</span>
+                            </div>
+                            <p class="course-card__description">Learn enterprise-grade project management methodologies including Agile, Scrum, and traditional approaches to deliver complex projects on time and within budget.</p>
+                            <div class="course-card__meta">
+                                <span class="course-card__lessons">15 Lessons</span>
+                                <span class="course-card__duration">6 Hours</span>
+                            </div>
+                            <div class="course-card__footer">
+                                <a href="course-detail.html?id=2" class="button button--primary">View Course</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="course-card">
-                    <div class="course-card__pattern"></div>
-                    <div class="course-card__content">
-                        <div class="course-card__header">
-                            <h3 class="course-card__title">Data Science Essentials</h3>
-                            <span class="course-card__difficulty">Intermediate</span>
-                        </div>
-                        <p class="course-card__description">Master the fundamentals of data analysis, visualization, and machine learning. Work with real-world datasets to solve complex problems.</p>
-                        <div class="course-card__meta">
-                            <span class="course-card__lessons">15 Lessons</span>
-                            <span class="course-card__duration">6 Hours</span>
-                        </div>
-                        <div class="course-card__footer">
-                            <a href="course-detail.html?id=2" class="button button--primary">View Course</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="course-card">
-                    <div class="course-card__pattern"></div>
-                    <div class="course-card__content">
-                        <div class="course-card__header">
-                            <h3 class="course-card__title">UX Design Principles</h3>
-                            <span class="course-card__difficulty">Beginner</span>
-                        </div>
-                        <p class="course-card__description">Learn the principles of user-centered design. Create intuitive interfaces that delight users and solve real problems.</p>
-                        <div class="course-card__meta">
-                            <span class="course-card__lessons">10 Lessons</span>
-                            <span class="course-card__duration">3.5 Hours</span>
-                        </div>
-                        <div class="course-card__footer">
-                            <a href="course-detail.html?id=3" class="button button--primary">View Course</a>
+                    
+                    <div class="course-card">
+                        <div class="course-card__pattern"></div>
+                        <div class="course-card__content">
+                            <div class="course-card__header">
+                                <h3 class="course-card__title">Business Financial Analysis</h3>
+                                <span class="course-card__difficulty beginner">Beginner</span>
+                            </div>
+                            <p class="course-card__description">Master the fundamentals of financial analysis for business decision-making. Learn to interpret financial statements and make data-driven investment recommendations.</p>
+                            <div class="course-card__meta">
+                                <span class="course-card__lessons">10 Lessons</span>
+                                <span class="course-card__duration">3.5 Hours</span>
+                            </div>
+                            <div class="course-card__footer">
+                                <a href="course-detail.html?id=3" class="button button--primary">View Course</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="course-card">
-                    <div class="course-card__pattern"></div>
-                    <div class="course-card__content">
-                        <div class="course-card__header">
-                            <h3 class="course-card__title">Advanced JavaScript Concepts</h3>
-                            <span class="course-card__difficulty">Advanced</span>
-                        </div>
-                        <p class="course-card__description">Take your JavaScript skills to the next level. Learn advanced patterns, asynchronous programming, and modern ES6+ features.</p>
-                        <div class="course-card__meta">
-                            <span class="course-card__lessons">14 Lessons</span>
-                            <span class="course-card__duration">5 Hours</span>
-                        </div>
-                        <div class="course-card__footer">
-                            <a href="course-detail.html?id=4" class="button button--primary">View Course</a>
+                    
+                    <div class="course-card">
+                        <div class="course-card__pattern"></div>
+                        <div class="course-card__content">
+                            <div class="course-card__header">
+                                <h3 class="course-card__title">Strategic Negotiation Mastery</h3>
+                                <span class="course-card__difficulty advanced">Advanced</span>
+                            </div>
+                            <p class="course-card__description">Develop advanced negotiation tactics to create win-win business outcomes. Learn psychological principles, preparation strategies, and closing techniques from expert negotiators.</p>
+                            <div class="course-card__meta">
+                                <span class="course-card__lessons">14 Lessons</span>
+                                <span class="course-card__duration">5 Hours</span>
+                            </div>
+                            <div class="course-card__footer">
+                                <a href="course-detail.html?id=4" class="button button--primary">View Course</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="course-card">
-                    <div class="course-card__pattern"></div>
-                    <div class="course-card__content">
-                        <div class="course-card__header">
-                            <h3 class="course-card__title">Responsive Web Design</h3>
-                            <span class="course-card__difficulty">Intermediate</span>
+                    
+                    <div class="course-card">
+                        <div class="course-card__pattern"></div>
+                        <div class="course-card__content">
+                            <div class="course-card__header">
+                                <h3 class="course-card__title">Change Management Excellence</h3>
+                                <span class="course-card__difficulty intermediate">Intermediate</span>
+                            </div>
+                            <p class="course-card__description">Lead successful organizational change initiatives using proven frameworks. Overcome resistance, build stakeholder buy-in, and ensure lasting transformation.</p>
+                            <div class="course-card__meta">
+                                <span class="course-card__lessons">8 Lessons</span>
+                                <span class="course-card__duration">3 Hours</span>
+                            </div>
+                            <div class="course-card__footer">
+                                <a href="course-detail.html?id=5" class="button button--primary">View Course</a>
+                            </div>
                         </div>
-                        <p class="course-card__description">Master the art of creating websites that look and function beautifully on any device. Learn modern CSS techniques and best practices.</p>
-                        <div class="course-card__meta">
-                            <span class="course-card__lessons">8 Lessons</span>
-                            <span class="course-card__duration">3 Hours</span>
-                        </div>
-                        <div class="course-card__footer">
-                            <a href="course-detail.html?id=5" class="button button--primary">View Course</a>
+                    </div>
+                    
+                    <div class="course-card">
+                        <div class="course-card__pattern"></div>
+                        <div class="course-card__content">
+                            <div class="course-card__header">
+                                <h3 class="course-card__title">Business Strategy & Innovation</h3>
+                                <span class="course-card__difficulty beginner">Beginner</span>
+                            </div>
+                            <p class="course-card__description">Master the frameworks for developing disruptive business strategies. Learn to identify market opportunities, analyze competition, and create sustainable competitive advantage.</p>
+                            <div class="course-card__meta">
+                                <span class="course-card__lessons">11 Lessons</span>
+                                <span class="course-card__duration">4 Hours</span>
+                            </div>
+                            <div class="course-card__footer">
+                                <a href="course-detail.html?id=6" class="button button--primary">View Course</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="course-card">
-                    <div class="course-card__pattern"></div>
-                    <div class="course-card__content">
-                        <div class="course-card__header">
-                            <h3 class="course-card__title">Business Analytics Fundamentals</h3>
-                            <span class="course-card__difficulty">Beginner</span>
-                        </div>
-                        <p class="course-card__description">Learn how to analyze business data to drive decision making. Master essential tools and techniques for business intelligence.</p>
-                        <div class="course-card__meta">
-                            <span class="course-card__lessons">11 Lessons</span>
-                            <span class="course-card__duration">4 Hours</span>
-                        </div>
-                        <div class="course-card__footer">
-                            <a href="course-detail.html?id=6" class="button button--primary">View Course</a>
-                        </div>
+            </section>
+            
+            <section class="catalog__pagination">
+                <div class="pagination">
+                    <button class="pagination__button pagination__button--prev" disabled>Previous</button>
+                    <div class="pagination__numbers">
+                        <a href="#" class="pagination__number pagination__number--active">1</a>
+                        <a href="#" class="pagination__number">2</a>
+                        <a href="#" class="pagination__number">3</a>
                     </div>
+                    <button class="pagination__button pagination__button--next">Next</button>
                 </div>
-            </div>
-        </section>
-        
-        <section class="catalog__pagination">
-            <div class="pagination">
-                <button class="pagination__button pagination__button--prev" disabled>Previous</button>
-                <div class="pagination__numbers">
-                    <a href="#" class="pagination__number pagination__number--active">1</a>
-                    <a href="#" class="pagination__number">2</a>
-                    <a href="#" class="pagination__number">3</a>
-                </div>
-                <button class="pagination__button pagination__button--next">Next</button>
-            </div>
-        </section>
+            </section>
+        </div>
     </main>
 
     <footer class="footer">
         <div class="footer__content">
-            <p>&copy; 2025 Interactive Learning Platform</p>
+            <p>&copy; 2025 Cooper Leadership Academy</p>
             <nav class="footer__nav">
                 <ul class="footer-nav-list">
                     <li class="footer-nav-list__item"><a href="#">Help</a></li>
