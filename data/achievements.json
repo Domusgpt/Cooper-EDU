@@ -1,65 +1,65 @@
 [
   {
     "id": 1,
-    "title": "HTML Master",
-    "description": "Complete all HTML lessons with 90% or higher quiz scores",
+    "title": "Leadership Fundamentals",
+    "description": "Complete the Strategic Leadership Fundamentals course with 90% or higher quiz scores",
     "type": "course-completion",
     "criteria": {
       "courseId": 1,
-      "lessonIds": [1, 2],
+      "lessonIds": [1, 2, 3, 4],
       "minQuizScore": 90
     },
     "pattern": "achievement.svg",
-    "image": "html-master.svg",
+    "image": "leadership-fundamentals.svg",
     "points": 100,
-    "unlockedAt": "2025-05-12T15:30:00Z"
+    "unlockedAt": "2025-05-10T15:30:00Z"
   },
   {
     "id": 2,
-    "title": "CSS Wizard",
-    "description": "Master the fundamentals of CSS styling",
+    "title": "Project Master",
+    "description": "Complete all project management modules with distinction",
     "type": "lesson-completion",
     "criteria": {
-      "courseId": 1,
-      "lessonIds": [3, 4, 5, 10]
+      "courseId": 2,
+      "lessonIds": [5, 6, 7, 8]
     },
     "pattern": "achievement.svg",
-    "image": "css-wizard.svg",
+    "image": "project-master.svg",
     "points": 75,
     "unlockedAt": null
   },
   {
     "id": 3,
-    "title": "JavaScript Novice",
-    "description": "Complete your first JavaScript lessons",
+    "title": "Financial Acumen",
+    "description": "Complete your first financial analysis modules",
     "type": "lesson-completion",
     "criteria": {
-      "courseId": 1,
-      "lessonIds": [6, 7]
+      "courseId": 3,
+      "lessonIds": [9, 10]
     },
     "pattern": "achievement.svg",
-    "image": "js-novice.svg",
+    "image": "financial-acumen.svg",
     "points": 50,
     "unlockedAt": null
   },
   {
     "id": 4,
-    "title": "Web Developer Apprentice",
-    "description": "Complete the Web Development Fundamentals course",
+    "title": "Executive Potential",
+    "description": "Complete the Strategic Leadership Excellence program",
     "type": "course-completion",
     "criteria": {
       "courseId": 1,
       "minQuizScore": 75
     },
     "pattern": "achievement.svg",
-    "image": "web-dev-apprentice.svg",
+    "image": "executive-potential.svg",
     "points": 150,
     "unlockedAt": null
   },
   {
     "id": 5,
     "title": "Fast Learner",
-    "description": "Complete 3 lessons in a single day",
+    "description": "Complete 3 leadership lessons in a single day",
     "type": "activity",
     "criteria": {
       "lessonCompletedInOneDay": 3
@@ -72,7 +72,7 @@
   {
     "id": 6,
     "title": "Perfect Quiz",
-    "description": "Score 100% on any quiz",
+    "description": "Score 100% on any leadership assessment",
     "type": "quiz",
     "criteria": {
       "score": 100
@@ -84,21 +84,21 @@
   },
   {
     "id": 7,
-    "title": "Coding Streak",
-    "description": "Learn for 5 consecutive days",
+    "title": "Learning Streak",
+    "description": "Learn leadership for 5 consecutive days",
     "type": "streak",
     "criteria": {
       "days": 5
     },
     "pattern": "achievement.svg",
-    "image": "coding-streak.svg",
+    "image": "learning-streak.svg",
     "points": 75,
     "unlockedAt": null
   },
   {
     "id": 8,
     "title": "First Steps",
-    "description": "Complete your first lesson",
+    "description": "Complete your first leadership lesson",
     "type": "lesson-completion",
     "criteria": {
       "lessonCount": 1
@@ -106,32 +106,60 @@
     "pattern": "achievement.svg",
     "image": "first-steps.svg",
     "points": 10,
-    "unlockedAt": "2025-05-10T14:20:00Z"
+    "unlockedAt": "2025-05-08T14:20:00Z"
   },
   {
     "id": 9,
-    "title": "Knowledge Seeker",
-    "description": "Explore and start at least 3 different courses",
+    "title": "Well-Rounded Leader",
+    "description": "Start courses in leadership, project management, and finance",
     "type": "course-exploration",
     "criteria": {
       "courseCount": 3
     },
     "pattern": "achievement.svg",
-    "image": "knowledge-seeker.svg",
+    "image": "well-rounded-leader.svg",
     "points": 40,
     "unlockedAt": null
   },
   {
     "id": 10,
-    "title": "Interactive Learner",
-    "description": "Complete 10 interactive exercises",
+    "title": "Active Learner",
+    "description": "Complete 10 interactive leadership exercises",
     "type": "interaction",
     "criteria": {
       "interactionCount": 10
     },
     "pattern": "achievement.svg",
-    "image": "interactive-learner.svg",
+    "image": "active-learner.svg",
     "points": 60,
+    "unlockedAt": null
+  },
+  {
+    "id": 11,
+    "title": "Team Builder",
+    "description": "Complete all team management modules",
+    "type": "lesson-completion",
+    "criteria": {
+      "courseId": 1,
+      "lessonIds": [11, 12, 13]
+    },
+    "pattern": "achievement.svg",
+    "image": "team-builder.svg",
+    "points": 80,
+    "unlockedAt": null
+  },
+  {
+    "id": 12,
+    "title": "Risk Manager",
+    "description": "Complete all project risk management lessons with distinction",
+    "type": "lesson-completion",
+    "criteria": {
+      "courseId": 2,
+      "lessonIds": [14, 15]
+    },
+    "pattern": "achievement.svg",
+    "image": "risk-manager.svg",
+    "points": 70,
     "unlockedAt": null
   }
 ]

@@ -58,6 +58,12 @@ async function initApp() {
     initCurrentPage();
     
     console.log('Application initialized successfully!');
+    
+    // Dispatch an event to notify other modules that app is initialized
+    const appInitializedEvent = new CustomEvent('appInitialized', {
+      detail: { appState }
+    });
+    window.dispatchEvent(appInitializedEvent);
   } catch (error) {
     console.error('Failed to initialize application:', error);
     showErrorMessage('Failed to load application data. Please refresh the page.');
@@ -281,12 +287,12 @@ function initCurrentPage() {
         });
       break;
     case 'profile.html':
-      import('./progress-manager.js')
+      import('./profile-manager.js')
         .then(module => {
-          module.renderUserProgress(appState);
+          module.initProfilePage(appState);
         })
         .catch(error => {
-          console.error('Error loading progress manager for profile page:', error);
+          console.error('Error loading profile manager for profile page:', error);
         });
       break;
     default:

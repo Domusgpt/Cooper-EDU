@@ -3,219 +3,736 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Learning Platform - My Profile</title>
+    <title>User Profile - Cooper Leadership Academy</title>
     <link rel="stylesheet" href="css/_variables.css">
     <link rel="stylesheet" href="css/_typography.css">
     <link rel="stylesheet" href="css/_components.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/enhanced-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        .profile-container {
-            max-width: var(--container-lg);
-            margin: 0 auto;
-            padding: var(--spacing-8);
-        }
-
-        .profile-header {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-6);
-            margin-bottom: var(--spacing-8);
-            padding-bottom: var(--spacing-6);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .profile-avatar {
-            width: 120px;
-            height: 120px;
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            background-color: #e67e22;
             border-radius: 50%;
-            background-color: var(--color-primary);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 48px;
             color: white;
-            font-weight: var(--font-weight-bold);
+            font-weight: bold;
         }
-
-        .profile-info h1 {
-            margin-bottom: var(--spacing-1);
+        
+        .header__logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
-
-        .profile-info p {
-            color: var(--text-secondary);
-            margin-bottom: var(--spacing-2);
+        
+        .logo-image {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
         }
-
+        
+        .profile-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            background-color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            background-color: #e67e22;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            font-weight: 500;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .profile-info {
+            flex: 1;
+        }
+        
+        .profile-name {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .profile-title {
+            font-size: 1.25rem;
+            color: #7f8c8d;
+            margin-bottom: 1rem;
+        }
+        
         .profile-stats {
             display: flex;
-            gap: var(--spacing-6);
-            margin-top: var(--spacing-4);
+            gap: 2rem;
+            margin-top: 1.5rem;
         }
-
+        
         .profile-stat {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-
-        .profile-stat-value {
-            font-size: var(--font-size-2xl);
-            font-weight: var(--font-weight-bold);
-            color: var(--color-primary);
+        
+        .profile-stat__value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c3e50;
         }
-
-        .profile-stat-label {
-            font-size: var(--font-size-sm);
-            color: var(--text-secondary);
+        
+        .profile-stat__label {
+            font-size: 0.875rem;
+            color: #7f8c8d;
         }
-
-        .profile-sections {
+        
+        .profile-actions {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .profile-edit-button {
+            padding: 0.75rem 1.5rem;
+            background-color: #f5f5f5;
+            color: #2c3e50;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .profile-content {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--spacing-8);
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
         }
-
-        .profile-section {
-            background-color: var(--bg-primary);
-            border-radius: var(--radius-lg);
-            padding: var(--spacing-6);
-            box-shadow: var(--shadow-base);
+        
+        .profile-tabs {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
         }
-
-        .profile-section h2 {
-            margin-top: 0;
-            margin-bottom: var(--spacing-6);
-            padding-bottom: var(--spacing-3);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .profile-section h3 {
-            margin-top: var(--spacing-6);
-            margin-bottom: var(--spacing-4);
-        }
-
-        .profile-progress__stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: var(--spacing-4);
-            margin-bottom: var(--spacing-6);
-        }
-
-        .courses-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: var(--spacing-6);
-        }
-
-        .course-progress-card {
+        
+        .profile-tab {
+            padding: 1rem 1.5rem;
+            font-weight: 500;
+            color: #7f8c8d;
+            cursor: pointer;
             position: relative;
-            background-color: var(--bg-primary);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-base);
-            padding: var(--spacing-4);
+        }
+        
+        .profile-tab.active {
+            color: #2c3e50;
+        }
+        
+        .profile-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #e67e22;
+            border-radius: 3px 3px 0 0;
+        }
+        
+        .profile-main {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .profile-sidebar {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid #f5f5f5;
+        }
+        
+        .course-progress-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .course-progress-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .course-progress-title {
+            font-weight: 500;
+            color: #2c3e50;
+            margin-bottom: 0.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .course-progress-percentage {
+            font-size: 0.875rem;
+            color: #7f8c8d;
+        }
+        
+        .course-progress-bar {
+            height: 8px;
+            background-color: #f1f1f1;
+            border-radius: 4px;
             overflow: hidden;
         }
-
-        .course-progress-card__pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 8px;
+        
+        .course-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #2c3e50 0%, #e67e22 100%);
+            border-radius: 4px;
         }
-
-        .course-progress-card__title {
-            margin-top: var(--spacing-3);
-            margin-bottom: var(--spacing-4);
+        
+        .certificates-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
-
-        .course-progress-card__progress {
-            margin-bottom: var(--spacing-4);
+        
+        .certificate-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border: 1px solid #f5f5f5;
+            border-radius: 8px;
         }
-
+        
+        .certificate-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(46, 204, 113, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .certificate-info {
+            flex: 1;
+        }
+        
+        .certificate-title {
+            font-weight: 500;
+            color: #2c3e50;
+            margin-bottom: 0.25rem;
+        }
+        
+        .certificate-date {
+            font-size: 0.875rem;
+            color: #7f8c8d;
+        }
+        
+        .certificate-download {
+            padding: 0.5rem;
+            color: #3498db;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .achievements-section {
+            margin-top: 2rem;
+        }
+        
         .achievements-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: var(--spacing-4);
-            margin-bottom: var(--spacing-6);
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 1.5rem;
         }
-
-        .achievement-card {
-            position: relative;
-            background-color: var(--bg-primary);
-            border-radius: var(--radius-lg);
-            padding: var(--spacing-4);
-            box-shadow: var(--shadow-base);
+        
+        .achievement-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
+        }
+        
+        .achievement-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #f9f9f9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.75rem;
             overflow: hidden;
         }
-
-        .achievement-card__pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 8px;
+        
+        .achievement-icon.locked {
+            opacity: 0.5;
+            filter: grayscale(1);
         }
-
-        .achievement-card__icon {
-            font-size: 32px;
-            margin: var(--spacing-3) 0;
+        
+        .achievement-title {
+            font-weight: 500;
+            font-size: 0.875rem;
+            color: #2c3e50;
+            margin-bottom: 0.25rem;
         }
-
-        .achievement-card__title {
-            margin-bottom: var(--spacing-2);
-            font-size: var(--font-size-md);
+        
+        .achievement-date {
+            font-size: 0.75rem;
+            color: #7f8c8d;
         }
-
-        .achievement-card__description {
-            font-size: var(--font-size-sm);
-            color: var(--text-secondary);
-            margin-bottom: var(--spacing-3);
+        
+        .activity-feed {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
-
-        .achievement-card__points {
-            font-weight: var(--font-weight-bold);
-            color: var(--color-primary);
-            font-size: var(--font-size-sm);
+        
+        .activity-item {
+            display: flex;
+            gap: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #f5f5f5;
         }
-
-        .achievement-card--locked {
-            opacity: 0.7;
+        
+        .activity-icon {
+            width: 36px;
+            height: 36px;
+            background-color: rgba(52, 152, 219, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
         }
-
-        .achievement-card--locked .achievement-card__description {
-            color: var(--text-tertiary);
+        
+        .activity-info {
+            flex: 1;
         }
-
-        @media (min-width: 992px) {
-            .profile-sections {
-                grid-template-columns: 2fr 1fr;
+        
+        .activity-text {
+            margin-bottom: 0.25rem;
+            line-height: 1.5;
+        }
+        
+        .activity-time {
+            font-size: 0.75rem;
+            color: #7f8c8d;
+        }
+        
+        .settings-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .form-label {
+            font-weight: 500;
+            color: #2c3e50;
+        }
+        
+        .form-input {
+            padding: 0.75rem 1rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        
+        .form-select {
+            padding: 0.75rem 1rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 1rem;
+            background-color: white;
+        }
+        
+        .form-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 992px) {
+            .profile-content {
+                grid-template-columns: 1fr;
             }
         }
-
+        
         @media (max-width: 768px) {
             .profile-header {
                 flex-direction: column;
                 text-align: center;
+                padding: 1.5rem;
             }
-
+            
             .profile-stats {
                 justify-content: center;
             }
-
-            .profile-avatar {
-                width: 100px;
-                height: 100px;
-                font-size: 36px;
+            
+            .profile-actions {
+                justify-content: center;
             }
+            
+            .profile-tabs {
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+            
+            .profile-tab {
+                padding: 1rem;
+            }
+            
+            .achievements-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .profile-container {
+                padding: 1rem;
+            }
+            
+            .profile-stats {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .achievements-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* Tab Content Styling */
+        .achievements-content, .certificates-content, .activity-content, .settings-content {
+            display: none;
+        }
+        
+        /* Certificate Program Styling */
+        .certificate-programs {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .certificate-program-item {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+        
+        .certificate-program__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+        
+        .certificate-program__header h3 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+        
+        .certificate-program__progress {
+            color: #7f8c8d;
+            font-size: 0.875rem;
+        }
+        
+        .certificate-program__courses {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+        
+        .course-badge {
+            padding: 0.5rem 1rem;
+            background-color: #f1f1f1;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            color: #7f8c8d;
+        }
+        
+        .course-badge.completed {
+            background-color: rgba(46, 204, 113, 0.1);
+            color: #27ae60;
+            font-weight: 500;
+        }
+        
+        /* Benefits List Styling */
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .benefits-list__item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .benefits-icon {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        /* Achievement Progress Styling */
+        .achievement-progress {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .progress-stat {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .progress-stat__label {
+            color: #7f8c8d;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .progress-stat__value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        /* Points Summary Styling */
+        .points-total {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .points-total__value {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #e67e22;
+        }
+        
+        .points-total__label {
+            color: #7f8c8d;
+            font-size: 1rem;
+        }
+        
+        .points-category {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid #f1f1f1;
+        }
+        
+        .points-category__label {
+            color: #2c3e50;
+        }
+        
+        .points-category__value {
+            font-weight: 500;
+            color: #e67e22;
+        }
+        
+        /* Next Achievement Styling */
+        .next-achievement__item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .next-achievement__title {
+            font-weight: 500;
+            color: #2c3e50;
+            margin-bottom: 0.25rem;
+        }
+        
+        .next-achievement__progress {
+            font-size: 0.875rem;
+            color: #7f8c8d;
+        }
+        
+        /* Learning Stats Styling */
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+        
+        .stat-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .stat-card__label {
+            color: #7f8c8d;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-card__value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        /* Toggle Switch Styling */
+        .toggle-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .slider {
+            background-color: #e67e22;
+        }
+        
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        
+        /* Account Info Styling */
+        .info-item {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #f1f1f1;
+        }
+        
+        .info-item__label {
+            color: #7f8c8d;
+            font-size: 0.875rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .info-item__value {
+            font-weight: 500;
+            color: #2c3e50;
+        }
+        
+        /* Events Styling */
+        .event-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #f1f1f1;
+        }
+        
+        .event-item__date {
+            background-color: #f8f9fa;
+            padding: 0.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+            min-width: 50px;
+            text-align: center;
+        }
+        
+        .event-item__title {
+            font-weight: 500;
+            color: #2c3e50;
+            margin-bottom: 0.25rem;
+        }
+        
+        .event-item__time {
+            font-size: 0.875rem;
+            color: #7f8c8d;
         }
     </style>
 </head>
 <body>
     <header class="header">
         <div class="header__logo">
-            <h1>Learning Platform</h1>
+            <img src="assets/images/leadership-icon.svg" alt="Cooper Leadership Academy Logo" class="logo-image">
+            <h1>Cooper Leadership Academy</h1>
         </div>
         <nav class="header__nav">
             <ul class="nav-list">
@@ -225,50 +742,612 @@
             </ul>
         </nav>
         <div class="header__user">
-            <span class="user-name">User Name</span>
-            <div class="user-avatar"></div>
+            <span class="user-name">Jane Cooper</span>
+            <div class="user-avatar">JC</div>
         </div>
     </header>
 
     <main class="profile-container">
         <div class="profile-header">
-            <div class="profile-avatar">D</div>
+            <div class="profile-avatar">JC</div>
             <div class="profile-info">
-                <h1 class="user-name">Demo User</h1>
-                <p>demo@example.com</p>
-                <p>Member since <time datetime="2025-01-15">January 15, 2025</time></p>
+                <h1 class="profile-name">Jane Cooper</h1>
+                <div class="profile-title">Marketing Director at TechCorp</div>
+                <p>Results-driven marketing leader with 8+ years of experience. Currently focused on developing strategic leadership skills to advance into an executive role.</p>
                 
                 <div class="profile-stats">
                     <div class="profile-stat">
-                        <div class="profile-stat-value">325</div>
-                        <div class="profile-stat-label">Total Points</div>
+                        <div class="profile-stat__value">3</div>
+                        <div class="profile-stat__label">Courses in Progress</div>
                     </div>
                     <div class="profile-stat">
-                        <div class="profile-stat-value">12</div>
-                        <div class="profile-stat-label">Completed Lessons</div>
+                        <div class="profile-stat__value">12</div>
+                        <div class="profile-stat__label">Lessons Completed</div>
                     </div>
                     <div class="profile-stat">
-                        <div class="profile-stat-value">5</div>
-                        <div class="profile-stat-label">Achievements</div>
+                        <div class="profile-stat__value">5</div>
+                        <div class="profile-stat__label">Achievements</div>
+                    </div>
+                    <div class="profile-stat">
+                        <div class="profile-stat__value">2</div>
+                        <div class="profile-stat__label">Certificates</div>
                     </div>
                 </div>
             </div>
+            <div class="profile-actions">
+                <button class="profile-edit-button">Edit Profile</button>
+            </div>
         </div>
-
-        <div class="profile-sections">
-            <div class="profile-section profile-progress">
-                <!-- Learning progress will be dynamically populated here -->
+        
+        <div class="profile-tabs">
+            <div class="profile-tab active">Progress</div>
+            <div class="profile-tab">Achievements</div>
+            <div class="profile-tab">Certificates</div>
+            <div class="profile-tab">Activity</div>
+            <div class="profile-tab">Settings</div>
+        </div>
+        
+        <div class="profile-content">
+            <!-- Progress Tab Content -->
+            <div class="progress-content">
+                <div class="profile-main">
+                    <h2 class="section-title">Course Progress</h2>
+                    
+                    <div class="course-progress-list">
+                        <div class="course-progress-item">
+                            <div class="course-progress-title">
+                                <span>Strategic Leadership Fundamentals</span>
+                                <span class="course-progress-percentage">65%</span>
+                            </div>
+                            <div class="course-progress-bar">
+                                <div class="course-progress-fill" style="width: 65%;"></div>
+                            </div>
+                            <div class="course-progress-details">
+                                <small>8 of 12 lessons completed</small>
+                                <a href="course-detail.html?id=1" class="button button--primary" style="float: right; margin: 0; padding: 0.4rem 0.8rem; font-size: 0.875rem;">Continue</a>
+                            </div>
+                        </div>
+                        
+                        <div class="course-progress-item">
+                            <div class="course-progress-title">
+                                <span>Advanced Project Management</span>
+                                <span class="course-progress-percentage">30%</span>
+                            </div>
+                            <div class="course-progress-bar">
+                                <div class="course-progress-fill" style="width: 30%;"></div>
+                            </div>
+                            <div class="course-progress-details">
+                                <small>4 of 15 lessons completed</small>
+                                <a href="course-detail.html?id=2" class="button button--primary" style="float: right; margin: 0; padding: 0.4rem 0.8rem; font-size: 0.875rem;">Continue</a>
+                            </div>
+                        </div>
+                        
+                        <div class="course-progress-item">
+                            <div class="course-progress-title">
+                                <span>Business Financial Analysis</span>
+                                <span class="course-progress-percentage">0%</span>
+                            </div>
+                            <div class="course-progress-bar">
+                                <div class="course-progress-fill" style="width: 0%;"></div>
+                            </div>
+                            <div class="course-progress-details">
+                                <small>0 of 10 lessons completed</small>
+                                <a href="course-detail.html?id=3" class="button button--primary" style="float: right; margin: 0; padding: 0.4rem 0.8rem; font-size: 0.875rem;">Start</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="profile-sidebar">
+                    <h2 class="section-title">Learning Goals</h2>
+                    
+                    <div class="learning-goals">
+                        <div class="form-group">
+                            <label class="form-label">Weekly Learning Target</label>
+                            <select class="form-select">
+                                <option>3 hours</option>
+                                <option selected>5 hours</option>
+                                <option>10 hours</option>
+                                <option>Custom</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Focus Areas</label>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
+                                <span style="background-color: rgba(44, 62, 80, 0.1); color: #2c3e50; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.875rem;">Leadership</span>
+                                <span style="background-color: rgba(44, 62, 80, 0.1); color: #2c3e50; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.875rem;">Project Management</span>
+                                <span style="background-color: rgba(44, 62, 80, 0.1); color: #2c3e50; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.875rem;">Finance</span>
+                                <span style="background-color: rgba(230, 126, 34, 0.1); color: #e67e22; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.875rem; cursor: pointer;">+ Add</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Career Goal</label>
+                            <input type="text" class="form-input" value="Marketing Executive Leadership">
+                        </div>
+                    </div>
+                </div>
             </div>
             
-            <div class="profile-section profile-achievements">
-                <!-- Achievements will be dynamically populated here -->
+            <!-- Achievements Tab Content -->
+            <div class="achievements-content">
+                <div class="profile-main">
+                    <h2 class="section-title">Your Achievements</h2>
+                    
+                    <div class="achievements-grid">
+                        <div class="achievement-item">
+                            <div class="achievement-icon">
+                                <img src="assets/images/achievement.svg" alt="Achievement" width="60" height="60">
+                            </div>
+                            <div class="achievement-title">Leadership Fundamentals</div>
+                            <div class="achievement-date">May 10, 2025</div>
+                        </div>
+                        
+                        <div class="achievement-item">
+                            <div class="achievement-icon">
+                                <img src="assets/images/achievement.svg" alt="Achievement" width="60" height="60">
+                            </div>
+                            <div class="achievement-title">Fast Learner</div>
+                            <div class="achievement-date">May 11, 2025</div>
+                        </div>
+                        
+                        <div class="achievement-item">
+                            <div class="achievement-icon">
+                                <img src="assets/images/achievement.svg" alt="Achievement" width="60" height="60">
+                            </div>
+                            <div class="achievement-title">First Steps</div>
+                            <div class="achievement-date">May 8, 2025</div>
+                        </div>
+                        
+                        <div class="achievement-item">
+                            <div class="achievement-icon locked">
+                                <img src="assets/images/achievement.svg" alt="Achievement" width="60" height="60">
+                            </div>
+                            <div class="achievement-title">Perfect Quiz</div>
+                            <div class="achievement-date">Locked</div>
+                        </div>
+                    </div>
+                    
+                    <h2 class="section-title" style="margin-top: 2rem;">Achievement Progress</h2>
+                    
+                    <div class="achievement-progress">
+                        <div class="progress-stat">
+                            <div class="progress-stat__label">Total Achievements</div>
+                            <div class="progress-stat__value">5 / 20</div>
+                        </div>
+                        
+                        <div class="progress-stat">
+                            <div class="progress-stat__label">Leadership Achievements</div>
+                            <div class="progress-stat__value">3 / 8</div>
+                        </div>
+                        
+                        <div class="progress-stat">
+                            <div class="progress-stat__label">Project Management</div>
+                            <div class="progress-stat__value">1 / 6</div>
+                        </div>
+                        
+                        <div class="progress-stat">
+                            <div class="progress-stat__label">Financial Analysis</div>
+                            <div class="progress-stat__value">1 / 6</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="profile-sidebar">
+                    <h2 class="section-title">Achievement Points</h2>
+                    
+                    <div class="points-summary">
+                        <div class="points-total">
+                            <div class="points-total__value">750</div>
+                            <div class="points-total__label">Total Points</div>
+                        </div>
+                        
+                        <div class="points-breakdown" style="margin-top: 1.5rem;">
+                            <div class="points-category">
+                                <div class="points-category__label">Leadership</div>
+                                <div class="points-category__value">450 pts</div>
+                            </div>
+                            
+                            <div class="points-category">
+                                <div class="points-category__label">Project Management</div>
+                                <div class="points-category__value">200 pts</div>
+                            </div>
+                            
+                            <div class="points-category">
+                                <div class="points-category__label">Financial Analysis</div>
+                                <div class="points-category__value">100 pts</div>
+                            </div>
+                        </div>
+                        
+                        <div class="next-achievement" style="margin-top: 2rem;">
+                            <h4 style="margin-bottom: 0.5rem;">Next Achievement</h4>
+                            <div class="next-achievement__item">
+                                <div class="achievement-icon locked" style="width: 40px; height: 40px;">
+                                    <img src="assets/images/achievement.svg" alt="Achievement" width="30" height="30">
+                                </div>
+                                <div class="next-achievement__info">
+                                    <div class="next-achievement__title">Project Master</div>
+                                    <div class="next-achievement__progress">2/3 project courses completed</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Certificates Tab Content -->
+            <div class="certificates-content">
+                <div class="profile-main">
+                    <h2 class="section-title">Earned Certificates</h2>
+                    
+                    <div class="certificates-list">
+                        <div class="certificate-item">
+                            <div class="certificate-icon">
+                                <img src="assets/images/leadership-icon.svg" alt="Certificate" width="24" height="24">
+                            </div>
+                            <div class="certificate-info">
+                                <div class="certificate-title">Leadership Foundations</div>
+                                <div class="certificate-date">Completed on March 15, 2025</div>
+                            </div>
+                            <button class="certificate-download">Download</button>
+                        </div>
+                        
+                        <div class="certificate-item">
+                            <div class="certificate-icon">
+                                <img src="assets/images/leadership-icon.svg" alt="Certificate" width="24" height="24">
+                            </div>
+                            <div class="certificate-info">
+                                <div class="certificate-title">Business Communication Excellence</div>
+                                <div class="certificate-date">Completed on January 22, 2025</div>
+                            </div>
+                            <button class="certificate-download">Download</button>
+                        </div>
+                    </div>
+                    
+                    <h2 class="section-title" style="margin-top: 3rem;">Certificate Programs in Progress</h2>
+                    
+                    <div class="certificate-programs">
+                        <div class="certificate-program-item">
+                            <div class="certificate-program__header">
+                                <h3>Leadership Excellence Program</h3>
+                                <span class="certificate-program__progress">2/4 courses completed</span>
+                            </div>
+                            <div class="certificate-program__description">
+                                <p>Complete all four leadership courses to earn the Leadership Excellence Program certificate, demonstrating mastery of strategic leadership principles.</p>
+                            </div>
+                            <div class="certificate-program__courses">
+                                <div class="course-badge completed">Strategic Leadership Fundamentals</div>
+                                <div class="course-badge completed">Leadership Communication</div>
+                                <div class="course-badge">Team Leadership Mastery</div>
+                                <div class="course-badge">Executive Decision-Making</div>
+                            </div>
+                        </div>
+                        
+                        <div class="certificate-program-item">
+                            <div class="certificate-program__header">
+                                <h3>Project Management Professional</h3>
+                                <span class="certificate-program__progress">1/3 courses completed</span>
+                            </div>
+                            <div class="certificate-program__description">
+                                <p>Complete all three project management courses to earn the Project Management Professional certificate, recognized for advanced project leadership skills.</p>
+                            </div>
+                            <div class="certificate-program__courses">
+                                <div class="course-badge completed">Advanced Project Management</div>
+                                <div class="course-badge">Agile Project Leadership</div>
+                                <div class="course-badge">Portfolio & Resource Management</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="profile-sidebar">
+                    <h2 class="section-title">Certificate Benefits</h2>
+                    
+                    <div class="certificate-benefits">
+                        <ul class="benefits-list">
+                            <li class="benefits-list__item">
+                                <span class="benefits-icon">✓</span>
+                                <span class="benefits-text">Add to your LinkedIn profile</span>
+                            </li>
+                            <li class="benefits-list__item">
+                                <span class="benefits-icon">✓</span>
+                                <span class="benefits-text">Downloadable PDF certificate</span>
+                            </li>
+                            <li class="benefits-list__item">
+                                <span class="benefits-icon">✓</span>
+                                <span class="benefits-text">Verifiable credential link</span>
+                            </li>
+                            <li class="benefits-list__item">
+                                <span class="benefits-icon">✓</span>
+                                <span class="benefits-text">Showcase to employers</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="linkedin-button" style="margin-top: 1.5rem;">
+                            <button class="button button--secondary">Add to LinkedIn</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Activity Tab Content -->
+            <div class="activity-content">
+                <div class="profile-main">
+                    <h2 class="section-title">Recent Activity</h2>
+                    
+                    <div class="activity-feed">
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <img src="assets/images/leadership-icon.svg" alt="Activity" width="18" height="18">
+                            </div>
+                            <div class="activity-info">
+                                <div class="activity-text">Completed "Leading High-Performance Teams" lesson</div>
+                                <div class="activity-time">Today</div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <img src="assets/images/leadership-icon.svg" alt="Activity" width="18" height="18">
+                            </div>
+                            <div class="activity-info">
+                                <div class="activity-text">Earned "Leadership Fundamentals" achievement</div>
+                                <div class="activity-time">Yesterday</div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <img src="assets/images/leadership-icon.svg" alt="Activity" width="18" height="18">
+                            </div>
+                            <div class="activity-info">
+                                <div class="activity-text">Started "Advanced Project Management" course</div>
+                                <div class="activity-time">2 days ago</div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <img src="assets/images/leadership-icon.svg" alt="Activity" width="18" height="18">
+                            </div>
+                            <div class="activity-info">
+                                <div class="activity-text">Completed Strategic Leadership quiz with score 85%</div>
+                                <div class="activity-time">3 days ago</div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <img src="assets/images/leadership-icon.svg" alt="Activity" width="18" height="18">
+                            </div>
+                            <div class="activity-info">
+                                <div class="activity-text">Updated profile information</div>
+                                <div class="activity-time">1 week ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h2 class="section-title" style="margin-top: 2rem;">Learning Statistics</h2>
+                    
+                    <div class="learning-stats">
+                        <div class="stat-row">
+                            <div class="stat-card">
+                                <div class="stat-card__label">Total Study Time</div>
+                                <div class="stat-card__value">42 hours</div>
+                            </div>
+                            
+                            <div class="stat-card">
+                                <div class="stat-card__label">Weekly Average</div>
+                                <div class="stat-card__value">5.5 hours</div>
+                            </div>
+                            
+                            <div class="stat-card">
+                                <div class="stat-card__label">Streak</div>
+                                <div class="stat-card__value">12 days</div>
+                            </div>
+                        </div>
+                        
+                        <div class="activity-chart" style="margin-top: 1.5rem; height: 150px; background-color: #f8f9fa; border-radius: 8px; display: flex; align-items: flex-end; padding: 1rem;">
+                            <div style="height: 40%; width: 12%; background-color: #e67e22; margin-right: 0.5rem;"></div>
+                            <div style="height: 60%; width: 12%; background-color: #e67e22; margin-right: 0.5rem;"></div>
+                            <div style="height: 25%; width: 12%; background-color: #e67e22; margin-right: 0.5rem;"></div>
+                            <div style="height: 80%; width: 12%; background-color: #e67e22; margin-right: 0.5rem;"></div>
+                            <div style="height: 45%; width: 12%; background-color: #e67e22; margin-right: 0.5rem;"></div>
+                            <div style="height: 70%; width: 12%; background-color: #e67e22; margin-right: 0.5rem;"></div>
+                            <div style="height: 50%; width: 12%; background-color: #e67e22;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="profile-sidebar">
+                    <h2 class="section-title">Weekly Target</h2>
+                    
+                    <div class="target-progress">
+                        <div class="target-progress__info">
+                            <div class="target-progress__label">5.5 / 10 hours</div>
+                            <div class="target-progress__percentage">55%</div>
+                        </div>
+                        
+                        <div class="target-progress__bar">
+                            <div class="target-progress__fill" style="width: 55%; height: 10px; background-color: #e67e22; border-radius: 5px;"></div>
+                        </div>
+                    </div>
+                    
+                    <h2 class="section-title" style="margin-top: 2rem;">Upcoming Events</h2>
+                    
+                    <div class="upcoming-events">
+                        <div class="event-item">
+                            <div class="event-item__date">May 25</div>
+                            <div class="event-item__info">
+                                <div class="event-item__title">Leadership Webinar</div>
+                                <div class="event-item__time">2:00 PM EST</div>
+                            </div>
+                        </div>
+                        
+                        <div class="event-item">
+                            <div class="event-item__date">Jun 2</div>
+                            <div class="event-item__info">
+                                <div class="event-item__title">Project Management Quiz</div>
+                                <div class="event-item__time">Due by 11:59 PM</div>
+                            </div>
+                        </div>
+                        
+                        <div class="event-item">
+                            <div class="event-item__date">Jun 10</div>
+                            <div class="event-item__info">
+                                <div class="event-item__title">Course Completion Deadline</div>
+                                <div class="event-item__time">Strategic Leadership</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Settings Tab Content -->
+            <div class="settings-content">
+                <div class="profile-main">
+                    <h2 class="section-title">Profile Settings</h2>
+                    
+                    <form class="settings-form">
+                        <div class="form-group">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-input" value="Jane Cooper">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Job Title</label>
+                            <input type="text" class="form-input" value="Marketing Director">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Company</label>
+                            <input type="text" class="form-input" value="TechCorp">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-input" value="jane.cooper@example.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Bio</label>
+                            <textarea class="form-input" rows="4">Results-driven marketing leader with 8+ years of experience. Currently focused on developing strategic leadership skills to advance into an executive role.</textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="button button--primary">Save Changes</button>
+                        </div>
+                    </form>
+                    
+                    <h2 class="section-title" style="margin-top: 3rem;">Learning Preferences</h2>
+                    
+                    <form class="settings-form">
+                        <div class="form-group">
+                            <label class="form-label">Weekly Learning Goal</label>
+                            <select class="form-select">
+                                <option>3 hours</option>
+                                <option selected>5 hours</option>
+                                <option>10 hours</option>
+                                <option>Custom</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Learning Focus</label>
+                            <select class="form-select" multiple>
+                                <option selected>Leadership</option>
+                                <option selected>Project Management</option>
+                                <option selected>Financial Analysis</option>
+                                <option>Marketing</option>
+                                <option>Sales</option>
+                                <option>Operations</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Email Notifications</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox">
+                                    <input type="checkbox" checked> Course updates
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" checked> Achievement unlocks
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox" checked> Weekly digest
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox"> Special events
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="button button--primary">Save Preferences</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="profile-sidebar">
+                    <h2 class="section-title">Account Information</h2>
+                    
+                    <div class="account-info">
+                        <div class="info-item">
+                            <div class="info-item__label">Member Since</div>
+                            <div class="info-item__value">January 15, 2025</div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-item__label">Subscription</div>
+                            <div class="info-item__value">Professional Plan</div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-item__label">Renewal Date</div>
+                            <div class="info-item__value">January 15, 2026</div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 1.5rem;">
+                        <button class="button button--secondary">Manage Subscription</button>
+                    </div>
+                    
+                    <h2 class="section-title" style="margin-top: 2rem;">Privacy Options</h2>
+                    
+                    <div class="privacy-options">
+                        <div class="toggle-option">
+                            <div class="toggle-option__label">Show my progress to teammates</div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="toggle-option">
+                            <div class="toggle-option__label">Show my achievements publicly</div>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        
+                        <div class="toggle-option">
+                            <div class="toggle-option__label">Appear in leaderboards</div>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
 
     <footer class="footer">
         <div class="footer__content">
-            <p>&copy; 2025 Interactive Learning Platform</p>
+            <p>&copy; 2025 Cooper Leadership Academy</p>
             <nav class="footer__nav">
                 <ul class="footer-nav-list">
                     <li class="footer-nav-list__item"><a href="#">Help</a></li>
@@ -281,5 +1360,16 @@
 
     <!-- JavaScript files -->
     <script src="js/main.js" type="module"></script>
+    <script type="module">
+        import { initProfilePage } from './js/profile-manager.js';
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // The main.js will handle initial data loading
+            // Once loaded, we'll initialize the profile page specifically
+            window.addEventListener('appInitialized', function(e) {
+                initProfilePage(e.detail.appState);
+            });
+        });
+    </script>
 </body>
 </html>
