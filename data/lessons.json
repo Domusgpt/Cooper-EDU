@@ -2,47 +2,47 @@
   {
     "id": 1,
     "courseId": 1,
-    "title": "Introduction to HTML",
+    "title": "The Leadership Mindset",
     "number": 1,
     "duration": 25,
     "content": [
       {
         "type": "text",
-        "content": "<h2>What is HTML?</h2><p>HTML (HyperText Markup Language) is the standard markup language for creating web pages. It defines the structure and content of a webpage using various elements represented by tags.</p>"
+        "content": "<h2>What is Strategic Leadership?</h2><p>Strategic leadership is the ability to influence others to voluntarily make decisions that enhance the long-term viability and success of the organization. Strategic leaders focus on creating and implementing organizational vision, mission, and objectives.</p>"
       },
       {
         "type": "key-point",
         "title": "Key Point",
-        "content": "HTML is the skeleton of every web page you see on the internet. It provides the structure that is then styled with CSS and made interactive with JavaScript."
+        "content": "Leadership is not about titles or positions - it's about making impact, inspiring others, and creating sustainable results for your organization."
       },
       {
         "type": "text",
-        "content": "<h2>Basic Structure of an HTML Document</h2><p>Every HTML document follows a basic structure that includes doctype declaration, html, head, and body elements.</p>"
+        "content": "<h2>Core Leadership Competencies</h2><p>Strategic leaders need to develop competencies in several key areas to be effective in today's complex business environment.</p>"
       },
       {
         "type": "code",
-        "language": "html",
-        "content": "<!DOCTYPE html>\n<html>\n<head>\n    <title>My First Webpage</title>\n</head>\n<body>\n    <h1>Hello, World!</h1>\n    <p>This is my first webpage.</p>\n</body>\n</html>"
+        "language": "markdown",
+        "content": "# Key Leadership Competencies\n\n1. **Strategic Vision** - Seeing the big picture and long-term goals\n2. **Decision-Making** - Making timely, informed decisions\n3. **Communication** - Articulating ideas clearly and persuasively\n4. **Emotional Intelligence** - Understanding and managing emotions\n5. **Team Building** - Creating high-performing, engaged teams"
       },
       {
         "type": "interactive-code",
-        "description": "Try it yourself",
-        "starterCode": "<!DOCTYPE html>\n<html>\n<head>\n    <title>My Page</title>\n</head>\n<body>\n    <!-- Write your code here -->\n    \n</body>\n</html>",
-        "solutionCode": "<!DOCTYPE html>\n<html>\n<head>\n    <title>My Page</title>\n</head>\n<body>\n    <h1>Welcome to my page</h1>\n    <p>This is a paragraph of text.</p>\n</body>\n</html>"
+        "description": "Try it yourself: Write a personal leadership mission statement",
+        "starterCode": "# My Leadership Mission Statement\n\nAs a leader, I will...\n\n## My core values are:\n\n- \n- \n- \n\n## My leadership principles:\n\n1. \n2. \n3. ",
+        "solutionCode": "# My Leadership Mission Statement\n\nAs a leader, I will inspire growth, foster innovation, and create an environment where individuals can thrive while achieving extraordinary business results.\n\n## My core values are:\n\n- Integrity and ethical decision-making\n- Continuous learning and growth\n- Empowerment and trust\n\n## My leadership principles:\n\n1. Lead by example and set high standards\n2. Create psychological safety for open communication\n3. Balance strategic vision with execution excellence"
       },
       {
         "type": "check-understanding",
-        "question": "Which tag is used to define the main content area of an HTML document?",
+        "question": "Which of the following best reflects the essence of strategic leadership?",
         "options": [
-          "<head>",
-          "<content>",
-          "<body>",
-          "<main>"
+          "Managing day-to-day operations efficiently",
+          "Giving clear orders and monitoring compliance",
+          "Formulating vision and inspiring others to achieve it",
+          "Having the highest technical expertise on the team"
         ],
         "correctAnswer": 2,
         "feedback": {
-          "correct": "That's right! The <body> tag contains all the content that you want to show to web visitors, such as text, images, tables, forms, etc.",
-          "incorrect": "Not quite. The <body> tag is the container for all visible content in an HTML document."
+          "correct": "That's right! Strategic leadership is about creating and communicating vision, then inspiring and enabling others to achieve that vision.",
+          "incorrect": "Not quite. Strategic leadership focuses on setting vision and direction while inspiring others to achieve it, rather than tactical management or technical expertise."
         }
       }
     ],
@@ -52,76 +52,76 @@
   {
     "id": 2,
     "courseId": 1,
-    "title": "HTML Document Structure",
+    "title": "Strategic Decision-Making",
     "number": 2,
     "duration": 30,
     "content": [
       {
         "type": "text",
-        "content": "<h2>HTML Elements</h2><p>HTML elements are the building blocks of HTML pages. They are represented by tags, written using angle brackets.</p>"
+        "content": "<h2>Decision-Making Frameworks</h2><p>Effective leaders use structured approaches to making complex decisions in uncertain business environments.</p>"
       },
       {
         "type": "text",
-        "content": "<h2>HTML Tags</h2><p>Most HTML elements have an opening tag and a closing tag, with content in between.</p>"
+        "content": "<h2>Decision Types</h2><p>Not all decisions are created equal. Understanding the type of decision you're facing helps determine the appropriate approach.</p>"
       },
       {
         "type": "code",
-        "language": "html",
-        "content": "<tagname>Content goes here...</tagname>"
+        "language": "markdown",
+        "content": "## Decision Types\n\n1. **Routine Decisions** - Familiar, procedural, can be delegated\n2. **Adaptive Decisions** - Require adjustments to known approaches\n3. **Innovative Decisions** - Novel situations requiring creative solutions\n4. **Crisis Decisions** - Time-pressured with high stakes"
       },
       {
         "type": "key-point",
         "title": "Key Point",
-        "content": "Some HTML elements are 'self-closing' and don't need a closing tag, such as <img>, <br>, and <input>."
+        "content": "The most important leadership decisions involve balancing short-term results with long-term organizational health and sustainability."
       },
       {
         "type": "text",
-        "content": "<h2>HTML Attributes</h2><p>HTML attributes provide additional information about HTML elements and are always specified in the opening tag.</p>"
+        "content": "<h2>OODA Loop Framework</h2><p>Developed by military strategist John Boyd, the OODA Loop (Observe, Orient, Decide, Act) is a powerful decision-making framework for high-pressure situations.</p>"
       },
       {
         "type": "code",
-        "language": "html",
-        "content": "<tagname attribute='value'>Content goes here...</tagname>"
+        "language": "markdown",
+        "content": "## OODA Loop Decision Framework\n\n1. **Observe** - Gather relevant data and information\n2. **Orient** - Analyze the situation through various perspectives\n3. **Decide** - Choose the most appropriate course of action\n4. **Act** - Implement the decision and observe results"
       },
       {
         "type": "interactive-matching",
-        "title": "Match HTML Elements with Their Purpose",
+        "title": "Match Decision Approaches with Scenarios",
         "pairs": [
           {
-            "item": "<h1> to <h6>",
-            "match": "Headings (h1 is the most important)"
+            "item": "Deciding quarterly budget allocations",
+            "match": "Routine Decision"
           },
           {
-            "item": "<p>",
-            "match": "Paragraph"
+            "item": "Responding to a competitor's new product launch",
+            "match": "Adaptive Decision"
           },
           {
-            "item": "<a>",
-            "match": "Hyperlink"
+            "item": "Developing an entirely new business model",
+            "match": "Innovative Decision"
           },
           {
-            "item": "<img>",
-            "match": "Image"
+            "item": "Managing a serious product safety issue",
+            "match": "Crisis Decision"
           },
           {
-            "item": "<ul> and <li>",
-            "match": "Unordered list and list item"
+            "item": "Creating a 5-year strategic plan",
+            "match": "Innovative Decision"
           }
         ]
       },
       {
         "type": "check-understanding",
-        "question": "Which HTML attribute specifies an alternate text for an image if the image cannot be displayed?",
+        "question": "Which decision-making approach emphasizes rapid cycling through observation, analysis, decision, and action?",
         "options": [
-          "src",
-          "alt",
-          "title",
-          "href"
+          "SWOT Analysis",
+          "OODA Loop",
+          "Decision Matrix",
+          "PDCA Cycle"
         ],
         "correctAnswer": 1,
         "feedback": {
-          "correct": "Correct! The alt attribute provides alternative information for an image if a user cannot view it (due to slow connection, error, or if the user uses a screen reader).",
-          "incorrect": "Incorrect. The alt attribute provides alternative text for an image if it cannot be displayed."
+          "correct": "Correct! The OODA Loop (Observe, Orient, Decide, Act) was developed for high-pressure military situations and emphasizes rapid cycling through these four steps to outpace opponents.",
+          "incorrect": "Incorrect. The OODA Loop (Observe, Orient, Decide, Act) is the framework designed specifically for rapid decision cycles in dynamic environments."
         }
       }
     ],
@@ -131,86 +131,62 @@
   {
     "id": 3,
     "courseId": 1,
-    "title": "Introduction to CSS",
+    "title": "Leading High-Performance Teams",
     "number": 3,
     "duration": 30,
     "content": [
       {
         "type": "text",
-        "content": "<h2>What is CSS?</h2><p>CSS (Cascading Style Sheets) is a stylesheet language used to describe the presentation of a document written in HTML. CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.</p>"
+        "content": "<h2>What Makes High-Performance Teams Different?</h2><p>High-performance teams consistently achieve exceptional results and outperform expectations. They share distinct characteristics that separate them from average teams.</p>"
       },
       {
         "type": "key-point",
         "title": "Key Point",
-        "content": "CSS is responsible for the visual aspects of web pages, while HTML handles the structure and content."
+        "content": "The leader's primary responsibility is to create the conditions where a diverse team can perform at its highest potential, not to have all the answers themselves."
       },
       {
         "type": "text",
-        "content": "<h2>CSS Syntax</h2><p>CSS consists of a selector and a declaration block. The selector points to the HTML element you want to style, and the declaration block contains one or more declarations separated by semicolons.</p>"
+        "content": "<h2>The Five Dysfunctions Model</h2><p>Patrick Lencioni's Five Dysfunctions of a Team provides a powerful framework for understanding team effectiveness and identifying improvement areas.</p>"
       },
       {
         "type": "code",
-        "language": "css",
-        "content": "selector {\n  property: value;\n  property: value;\n}"
+        "language": "markdown",
+        "content": "## Five Dysfunctions of a Team (in reverse order - building blocks of success)\n\n1. **Trust** - Vulnerability-based trust where team members are open about weaknesses and mistakes\n2. **Healthy Conflict** - Passionate debate around ideas without personal attacks\n3. **Commitment** - Clear decisions and complete buy-in from team members\n4. **Accountability** - Willingness to call out peers on performance or behaviors that hurt the team\n5. **Results** - Focus on collective outcomes over individual recognition or ego"
       },
       {
         "type": "interactive-code",
-        "description": "Try it yourself",
-        "starterCode": "/* Style the body element */\nbody {\n  \n}\n\n/* Style all paragraph elements */\np {\n  \n}",
-        "solutionCode": "/* Style the body element */\nbody {\n  background-color: #f0f0f0;\n  font-family: Arial, sans-serif;\n}\n\n/* Style all paragraph elements */\np {\n  color: #333333;\n  line-height: 1.6;\n}"
+        "description": "Try it yourself: Team Performance Assessment",
+        "starterCode": "# Team Performance Assessment\n\nRate your team on each dimension (1-10 scale):\n\n## Trust Level: \n* Team members admit weaknesses and mistakes: \n* Team members ask for help: \n\n## Conflict Management:\n* Team engages in unfiltered debate around key issues: \n* Different perspectives are welcomed and explored: \n\n## Commitment Level:\n* Clear decisions are made despite initial disagreements: \n* Team members support decisions once made, even if they initially disagreed: \n\n## Accountability Practices:\n* Team members call out peers on unproductive behavior: \n* Team regularly reviews progress against goals: \n\n## Results Orientation:\n* Team focuses on collective outcomes over individual achievements: \n* Team regularly achieves or exceeds performance targets: ",
+        "solutionCode": "# Team Performance Assessment\n\nRate your team on each dimension (1-10 scale):\n\n## Trust Level: 7\n* Team members admit weaknesses and mistakes: 6\n* Team members ask for help: 8\n\n## Conflict Management: 5\n* Team engages in unfiltered debate around key issues: 4\n* Different perspectives are welcomed and explored: 6\n\n## Commitment Level: 8\n* Clear decisions are made despite initial disagreements: 7\n* Team members support decisions once made, even if they initially disagreed: 9\n\n## Accountability Practices: 6\n* Team members call out peers on unproductive behavior: 5\n* Team regularly reviews progress against goals: 7\n\n## Results Orientation: 9\n* Team focuses on collective outcomes over individual achievements: 8\n* Team regularly achieves or exceeds performance targets: 9"
       },
       {
         "type": "text",
-        "content": "<h2>CSS Selectors</h2><p>CSS selectors are used to \"find\" or select HTML elements based on their element name, id, class, attribute, and more.</p>"
+        "content": "<h2>Psychological Safety</h2><p>Google's Project Aristotle research identified psychological safety as the most important factor in high-performing teams. Psychological safety is the belief that you won't be punished or humiliated for speaking up with ideas, questions, concerns, or mistakes.</p>"
       },
       {
         "type": "table",
-        "headers": ["Selector", "Example", "Description"],
+        "headers": ["Factor", "Description", "Leader Actions"],
         "rows": [
-          [".class", ".intro", "Selects all elements with class=\"intro\""],
-          ["#id", "#firstname", "Selects the element with id=\"firstname\""],
-          ["element", "p", "Selects all <p> elements"]
-        ]
-      },
-      {
-        "type": "interactive-matching",
-        "title": "Selector Matching Game",
-        "pairs": [
-          {
-            "item": "p",
-            "match": "Selects all paragraph elements"
-          },
-          {
-            "item": ".header",
-            "match": "Selects all elements with class=\"header\""
-          },
-          {
-            "item": "#main",
-            "match": "Selects the element with id=\"main\""
-          },
-          {
-            "item": "div > p",
-            "match": "Selects all p elements that are direct children of a div element"
-          },
-          {
-            "item": "a:hover",
-            "match": "Selects links on mouse over"
-          }
+          ["Psychological Safety", "Team members feel safe to take risks and be vulnerable", "Model vulnerability, respond positively to questions, frame work as learning problems"],
+          ["Dependability", "Team members reliably complete quality work on time", "Set clear expectations, provide resources, recognize reliability"],
+          ["Structure & Clarity", "Clear goals, roles, and execution plans", "Define roles, establish metrics, create visible goals and plans"],
+          ["Meaning", "Work is personally important to team members", "Connect work to broader purpose, understand personal values"],
+          ["Impact", "Team members believe their work matters", "Share customer stories, demonstrate how work affects organization"]
         ]
       },
       {
         "type": "check-understanding",
-        "question": "Which of the following is the correct CSS syntax?",
+        "question": "According to Google's research on team effectiveness, which factor was identified as most important for high-performing teams?",
         "options": [
-          "body [color: black;]",
-          "{body: color=black;}",
-          "body {color: black;}",
-          "body:color=black;"
+          "Individual technical excellence",
+          "Clear hierarchical structure",
+          "Psychological safety",
+          "Competitive internal dynamics"
         ],
         "correctAnswer": 2,
         "feedback": {
-          "correct": "Correct! The proper CSS syntax includes the selector followed by curly braces containing property:value pairs.",
-          "incorrect": "Not quite. The proper CSS syntax is: selector {property: value;}"
+          "correct": "Correct! Google's Project Aristotle research found psychological safety - the belief that one won't be punished for speaking up with ideas, questions, concerns, or mistakes - was the most critical factor in team effectiveness.",
+          "incorrect": "Not quite. Google's research found that psychological safety was the most important factor - more than individual talent, clear structure, or competitive dynamics."
         }
       }
     ],

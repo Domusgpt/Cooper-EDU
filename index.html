@@ -3,16 +3,327 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Learning Platform - Dashboard</title>
+    <title>Cooper Educational Platform - Business Leadership & Project Management</title>
     <link rel="stylesheet" href="css/_variables.css">
     <link rel="stylesheet" href="css/_typography.css">
     <link rel="stylesheet" href="css/_components.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Inline critical styles to ensure basic styling works */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #212121;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+        
+        .header {
+            background-color: #4361ee;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .header__logo h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-list__item {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-list__item a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .nav-list__item--active a {
+            border-bottom: 2px solid white;
+            padding-bottom: 3px;
+        }
+        
+        .dashboard {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .dashboard__welcome {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .learning-paths__container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .learning-path-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .learning-path-card__pattern {
+            height: 8px;
+            background-color: #4361ee;
+        }
+        
+        .learning-path-card__title {
+            padding: 1.5rem 1.5rem 0;
+            margin-top: 0;
+        }
+        
+        .learning-path-card__progress {
+            padding: 0 1.5rem 1rem;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+        
+        .progress-bar__fill {
+            height: 100%;
+            background-color: #4361ee;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #4361ee;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            margin: 0.5rem 1.5rem 1.5rem;
+            text-align: center;
+        }
+        
+        .button--secondary {
+            background-color: #f5f5f5;
+            color: #4361ee;
+            border: 1px solid #4361ee;
+        }
+        
+        .progress-overview__container {
+            display: grid;
+            grid-template-columns: 2fr 3fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .progress-overview__stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+        
+        .stat-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .stat-card__value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #4361ee;
+            margin: 0.5rem 0;
+        }
+        
+        .progress-overview__recent {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .activity-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .activity-list__item {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .activity-time {
+            font-size: 0.875rem;
+            color: #757575;
+            margin-right: 1rem;
+            min-width: 80px;
+        }
+        
+        .recommended__container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .course-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .course-card__pattern {
+            height: 8px;
+            background-color: #ff5e78;
+        }
+        
+        .course-card__title {
+            padding: 1.5rem 1.5rem 0;
+            margin-top: 0;
+        }
+        
+        .course-card__description {
+            padding: 0 1.5rem;
+            margin-bottom: 1rem;
+            color: #616161;
+        }
+        
+        .footer {
+            background-color: #212121;
+            color: white;
+            padding: 2rem;
+        }
+        
+        .footer__content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .footer-nav-list {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .footer-nav-list__item {
+            margin-left: 1.5rem;
+        }
+        
+        .footer-nav-list__item a {
+            color: #bdbdbd;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1rem;
+            }
+            
+            .header__nav {
+                width: 100%;
+                margin: 1rem 0;
+            }
+            
+            .header__user {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            .nav-list {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .nav-list__item {
+                margin-left: 0;
+            }
+            
+            .dashboard {
+                padding: 1rem;
+            }
+            
+            .progress-overview__container {
+                grid-template-columns: 1fr;
+            }
+            
+            .progress-overview__stats {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            
+            .footer__content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-nav-list {
+                margin-top: 1rem;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .learning-paths__container,
+            .recommended__container {
+                grid-template-columns: 1fr;
+            }
+            
+            .progress-overview__stats {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="header">
         <div class="header__logo">
-            <h1>Learning Platform</h1>
+            <h1>Cooper Business Leadership Platform</h1>
         </div>
         <nav class="header__nav">
             <ul class="nav-list">
@@ -30,19 +341,19 @@
     <main class="dashboard">
         <section class="dashboard__welcome">
             <h2>Welcome back, <span class="user-name">User</span>!</h2>
-            <p>Continue where you left off or explore new learning paths.</p>
+            <p>Continue your leadership and management development journey with our specialized business courses.</p>
         </section>
 
         <section class="dashboard__learning-paths">
             <div class="section-header">
-                <h2>Learning Paths</h2>
+                <h2>Leadership Development Paths</h2>
                 <a href="course-catalog.html" class="button button--secondary">View All</a>
             </div>
             <div class="learning-paths__container">
                 <!-- Learning paths will be dynamically populated from data/courses.json -->
                 <div class="learning-path-card">
                     <div class="learning-path-card__pattern"></div>
-                    <h3 class="learning-path-card__title">Web Development Fundamentals</h3>
+                    <h3 class="learning-path-card__title">Strategic Leadership Fundamentals</h3>
                     <div class="learning-path-card__progress">
                         <div class="progress-bar">
                             <div class="progress-bar__fill" style="width: 65%;"></div>
@@ -54,7 +365,7 @@
                 
                 <div class="learning-path-card">
                     <div class="learning-path-card__pattern"></div>
-                    <h3 class="learning-path-card__title">Data Science Essentials</h3>
+                    <h3 class="learning-path-card__title">Advanced Project Management</h3>
                     <div class="learning-path-card__progress">
                         <div class="progress-bar">
                             <div class="progress-bar__fill" style="width: 30%;"></div>
@@ -66,7 +377,7 @@
                 
                 <div class="learning-path-card">
                     <div class="learning-path-card__pattern"></div>
-                    <h3 class="learning-path-card__title">UX Design Principles</h3>
+                    <h3 class="learning-path-card__title">Business Financial Analysis</h3>
                     <div class="learning-path-card__progress">
                         <div class="progress-bar">
                             <div class="progress-bar__fill" style="width: 0%;"></div>
@@ -106,15 +417,15 @@
                     <ul class="activity-list">
                         <li class="activity-list__item">
                             <span class="activity-time">Today</span>
-                            <span class="activity-description">Completed "Introduction to CSS" lesson</span>
+                            <span class="activity-description">Completed "Leading High-Performance Teams" lesson</span>
                         </li>
                         <li class="activity-list__item">
                             <span class="activity-time">Yesterday</span>
-                            <span class="activity-description">Earned "HTML Master" achievement</span>
+                            <span class="activity-description">Earned "Leadership Fundamentals" achievement</span>
                         </li>
                         <li class="activity-list__item">
                             <span class="activity-time">2 days ago</span>
-                            <span class="activity-description">Started "Data Science Essentials" course</span>
+                            <span class="activity-description">Started "Advanced Project Management" course</span>
                         </li>
                     </ul>
                 </div>
@@ -129,15 +440,15 @@
                 <!-- Recommended courses will be dynamically populated based on user progress -->
                 <div class="course-card">
                     <div class="course-card__pattern"></div>
-                    <h3 class="course-card__title">Advanced JavaScript Concepts</h3>
-                    <p class="course-card__description">Take your JavaScript skills to the next level with advanced concepts and patterns.</p>
+                    <h3 class="course-card__title">Strategic Negotiation Mastery</h3>
+                    <p class="course-card__description">Develop advanced negotiation tactics to create win-win business outcomes. Learn from expert negotiators.</p>
                     <a href="course-detail.html?id=4" class="button button--primary">View Course</a>
                 </div>
                 
                 <div class="course-card">
                     <div class="course-card__pattern"></div>
-                    <h3 class="course-card__title">Responsive Web Design</h3>
-                    <p class="course-card__description">Learn how to create websites that look great on any device.</p>
+                    <h3 class="course-card__title">Change Management Excellence</h3>
+                    <p class="course-card__description">Lead successful organizational change initiatives using proven frameworks. Build stakeholder buy-in and ensure lasting transformation.</p>
                     <a href="course-detail.html?id=5" class="button button--primary">View Course</a>
                 </div>
             </div>
@@ -146,7 +457,7 @@
 
     <footer class="footer">
         <div class="footer__content">
-            <p>&copy; 2025 Interactive Learning Platform</p>
+            <p>&copy; 2025 Cooper Business Leadership Platform</p>
             <nav class="footer__nav">
                 <ul class="footer-nav-list">
                     <li class="footer-nav-list__item"><a href="#">Help</a></li>
