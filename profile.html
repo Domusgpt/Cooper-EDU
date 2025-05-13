@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile - Cooper Leadership Academy</title>
+    
+    <!-- Modern CSS System -->
+    <link rel="stylesheet" href="css/modern-style.css">
+    
+    <!-- Legacy CSS (will be eventually removed) -->
     <link rel="stylesheet" href="css/_variables.css">
     <link rel="stylesheet" href="css/_typography.css">
     <link rel="stylesheet" href="css/_components.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/enhanced-style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         .user-avatar {
             width: 40px;
@@ -747,124 +751,173 @@
         </div>
     </header>
 
-    <main class="profile-container">
+    <main class="container py-8">
+        <!-- Modern Profile Header with gradient background -->
         <div class="profile-header">
-            <div class="profile-avatar">JC</div>
-            <div class="profile-info">
-                <h1 class="profile-name">Jane Cooper</h1>
-                <div class="profile-title">Marketing Director at TechCorp</div>
-                <p>Results-driven marketing leader with 8+ years of experience. Currently focused on developing strategic leadership skills to advance into an executive role.</p>
-                
-                <div class="profile-stats">
-                    <div class="profile-stat">
-                        <div class="profile-stat__value">3</div>
-                        <div class="profile-stat__label">Courses in Progress</div>
-                    </div>
-                    <div class="profile-stat">
-                        <div class="profile-stat__value">12</div>
-                        <div class="profile-stat__label">Lessons Completed</div>
-                    </div>
-                    <div class="profile-stat">
-                        <div class="profile-stat__value">5</div>
-                        <div class="profile-stat__label">Achievements</div>
-                    </div>
-                    <div class="profile-stat">
-                        <div class="profile-stat__value">2</div>
-                        <div class="profile-stat__label">Certificates</div>
+            <div class="profile-header__pattern"></div>
+            <div class="profile-header__content">
+                <div class="profile-avatar">JC</div>
+                <div class="profile-info">
+                    <h1 class="profile-name">Jane Cooper</h1>
+                    <div class="profile-title">Marketing Director at TechCorp</div>
+                    <p class="profile-bio">Results-driven marketing leader with 8+ years of experience. Currently focused on developing strategic leadership skills to advance into an executive role.</p>
+                    
+                    <div class="profile-stats">
+                        <div class="profile-stat">
+                            <div class="profile-stat__value">3</div>
+                            <div class="profile-stat__label">Courses in Progress</div>
+                        </div>
+                        <div class="profile-stat">
+                            <div class="profile-stat__value">12</div>
+                            <div class="profile-stat__label">Lessons Completed</div>
+                        </div>
+                        <div class="profile-stat">
+                            <div class="profile-stat__value">5</div>
+                            <div class="profile-stat__label">Achievements</div>
+                        </div>
+                        <div class="profile-stat">
+                            <div class="profile-stat__value">2</div>
+                            <div class="profile-stat__label">Certificates</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="profile-actions">
-                <button class="profile-edit-button">Edit Profile</button>
+                <div class="profile-actions">
+                    <button class="button button--glass">
+                        <span>Edit Profile</span>
+                    </button>
+                </div>
             </div>
         </div>
         
-        <div class="profile-tabs">
-            <div class="profile-tab active">Progress</div>
-            <div class="profile-tab">Achievements</div>
-            <div class="profile-tab">Certificates</div>
-            <div class="profile-tab">Activity</div>
-            <div class="profile-tab">Settings</div>
+        <!-- Modern Tabs Navigation -->
+        <div class="tabs mb-8">
+            <div class="tabs__list">
+                <div class="tab active">Progress</div>
+                <div class="tab">Achievements</div>
+                <div class="tab">Certificates</div>
+                <div class="tab">Activity</div>
+                <div class="tab">Settings</div>
+            </div>
         </div>
         
         <div class="profile-content">
             <!-- Progress Tab Content -->
             <div class="progress-content">
-                <div class="profile-main">
-                    <h2 class="section-title">Course Progress</h2>
-                    
-                    <div class="course-progress-list">
-                        <div class="course-progress-item">
-                            <div class="course-progress-title">
-                                <span>Strategic Leadership Fundamentals</span>
-                                <span class="course-progress-percentage">65%</span>
+                <div class="grid grid--gap-lg">
+                    <div class="grid-col-12 grid-col-lg-8">
+                        <div class="card p-6">
+                            <h2 class="text-2xl font-bold mb-6">Course Progress</h2>
+                            
+                            <div class="flex flex-col gap-6 mb-6">
+                                <!-- Course 1 -->
+                                <div class="card p-6">
+                                    <div class="flex justify-between mb-2">
+                                        <h3 class="text-xl font-semibold">Strategic Leadership Fundamentals</h3>
+                                        <span class="badge badge--primary">65%</span>
+                                    </div>
+                                    
+                                    <div class="progress mb-3">
+                                        <div class="progress__bar" style="width: 65%;"></div>
+                                    </div>
+                                    
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-sm text-secondary">8 of 12 lessons completed</span>
+                                        <a href="course-detail.html?id=1" class="button button--primary button--sm">Continue</a>
+                                    </div>
+                                </div>
+                                
+                                <!-- Course 2 -->
+                                <div class="card p-6">
+                                    <div class="flex justify-between mb-2">
+                                        <h3 class="text-xl font-semibold">Advanced Project Management</h3>
+                                        <span class="badge badge--primary">30%</span>
+                                    </div>
+                                    
+                                    <div class="progress mb-3">
+                                        <div class="progress__bar" style="width: 30%;"></div>
+                                    </div>
+                                    
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-sm text-secondary">4 of 15 lessons completed</span>
+                                        <a href="course-detail.html?id=2" class="button button--primary button--sm">Continue</a>
+                                    </div>
+                                </div>
+                                
+                                <!-- Course 3 -->
+                                <div class="card p-6">
+                                    <div class="flex justify-between mb-2">
+                                        <h3 class="text-xl font-semibold">Business Financial Analysis</h3>
+                                        <span class="badge badge--outline badge--secondary">Not Started</span>
+                                    </div>
+                                    
+                                    <div class="progress mb-3">
+                                        <div class="progress__bar" style="width: 0%;"></div>
+                                    </div>
+                                    
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-sm text-secondary">0 of 10 lessons completed</span>
+                                        <a href="course-detail.html?id=3" class="button button--primary button--sm">Start</a>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="course-progress-bar">
-                                <div class="course-progress-fill" style="width: 65%;"></div>
-                            </div>
-                            <div class="course-progress-details">
-                                <small>8 of 12 lessons completed</small>
-                                <a href="course-detail.html?id=1" class="button button--primary" style="float: right; margin: 0; padding: 0.4rem 0.8rem; font-size: 0.875rem;">Continue</a>
-                            </div>
-                        </div>
-                        
-                        <div class="course-progress-item">
-                            <div class="course-progress-title">
-                                <span>Advanced Project Management</span>
-                                <span class="course-progress-percentage">30%</span>
-                            </div>
-                            <div class="course-progress-bar">
-                                <div class="course-progress-fill" style="width: 30%;"></div>
-                            </div>
-                            <div class="course-progress-details">
-                                <small>4 of 15 lessons completed</small>
-                                <a href="course-detail.html?id=2" class="button button--primary" style="float: right; margin: 0; padding: 0.4rem 0.8rem; font-size: 0.875rem;">Continue</a>
-                            </div>
-                        </div>
-                        
-                        <div class="course-progress-item">
-                            <div class="course-progress-title">
-                                <span>Business Financial Analysis</span>
-                                <span class="course-progress-percentage">0%</span>
-                            </div>
-                            <div class="course-progress-bar">
-                                <div class="course-progress-fill" style="width: 0%;"></div>
-                            </div>
-                            <div class="course-progress-details">
-                                <small>0 of 10 lessons completed</small>
-                                <a href="course-detail.html?id=3" class="button button--primary" style="float: right; margin: 0; padding: 0.4rem 0.8rem; font-size: 0.875rem;">Start</a>
+                            
+                            <!-- Suggested next steps -->
+                            <div class="alert alert--info">
+                                <div class="alert__icon">ⓘ</div>
+                                <div class="alert__content">
+                                    <h4 class="alert__title">Recommended Next Step</h4>
+                                    <p class="alert__message">Continue your Strategic Leadership course to learn about team dynamics and leadership communication strategies.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="profile-sidebar">
-                    <h2 class="section-title">Learning Goals</h2>
                     
-                    <div class="learning-goals">
-                        <div class="form-group">
-                            <label class="form-label">Weekly Learning Target</label>
-                            <select class="form-select">
-                                <option>3 hours</option>
-                                <option selected>5 hours</option>
-                                <option>10 hours</option>
-                                <option>Custom</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Focus Areas</label>
-                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
-                                <span style="background-color: rgba(44, 62, 80, 0.1); color: #2c3e50; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.875rem;">Leadership</span>
-                                <span style="background-color: rgba(44, 62, 80, 0.1); color: #2c3e50; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.875rem;">Project Management</span>
-                                <span style="background-color: rgba(44, 62, 80, 0.1); color: #2c3e50; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.875rem;">Finance</span>
-                                <span style="background-color: rgba(230, 126, 34, 0.1); color: #e67e22; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.875rem; cursor: pointer;">+ Add</span>
+                    <div class="grid-col-12 grid-col-lg-4">
+                        <div class="card p-6">
+                            <h2 class="text-xl font-bold mb-4">Learning Goals</h2>
+                            
+                            <div class="mb-6">
+                                <div class="form-group">
+                                    <label class="form-label">Weekly Learning Target</label>
+                                    <select class="form-select">
+                                        <option>3 hours</option>
+                                        <option selected>5 hours</option>
+                                        <option>10 hours</option>
+                                        <option>Custom</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">Focus Areas</label>
+                                    <div class="flex flex-wrap gap-2 mt-2">
+                                        <span class="badge badge--primary">Leadership</span>
+                                        <span class="badge badge--primary">Project Management</span>
+                                        <span class="badge badge--primary">Finance</span>
+                                        <span class="badge badge--secondary badge--outline" style="cursor: pointer;">+ Add</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">Career Goal</label>
+                                    <input type="text" class="form-input" value="Marketing Executive Leadership">
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Career Goal</label>
-                            <input type="text" class="form-input" value="Marketing Executive Leadership">
+                            
+                            <!-- Weekly progress -->
+                            <h3 class="text-lg font-semibold mb-3">Weekly Progress</h3>
+                            <div class="progress progress--success mb-2">
+                                <div class="progress__bar" style="width: 60%;"></div>
+                            </div>
+                            <p class="text-sm text-secondary mb-6">3 of 5 hours completed this week</p>
+                            
+                            <!-- Learning Streak -->
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h3 class="text-lg font-semibold">Current Streak</h3>
+                                    <p class="text-sm text-secondary">Keep it going!</p>
+                                </div>
+                                <div class="text-2xl font-bold gradient-text">7 days</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -872,105 +925,153 @@
             
             <!-- Achievements Tab Content -->
             <div class="achievements-content">
-                <div class="profile-main">
-                    <h2 class="section-title">Your Achievements</h2>
-                    
-                    <div class="achievements-grid">
-                        <div class="achievement-item">
-                            <div class="achievement-icon">
-                                <img src="assets/images/achievement.svg" alt="Achievement" width="60" height="60">
+                <div class="grid grid--gap-lg">
+                    <div class="grid-col-12 grid-col-lg-8">
+                        <div class="card p-6">
+                            <div class="flex justify-between items-center mb-6">
+                                <h2 class="text-2xl font-bold">Your Achievements</h2>
+                                <span class="badge badge--primary">5 earned</span>
                             </div>
-                            <div class="achievement-title">Leadership Fundamentals</div>
-                            <div class="achievement-date">May 10, 2025</div>
-                        </div>
-                        
-                        <div class="achievement-item">
-                            <div class="achievement-icon">
-                                <img src="assets/images/achievement.svg" alt="Achievement" width="60" height="60">
+                            
+                            <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 20px;">
+                                <!-- Achievement 1 -->
+                                <div class="achievement-badge">
+                                    <div class="achievement-badge__icon">
+                                        <img src="assets/images/achievement.svg" alt="Achievement" class="achievement-badge__icon-img">
+                                    </div>
+                                    <div class="achievement-badge__title">Leadership Fundamentals</div>
+                                    <div class="achievement-badge__date">May 10, 2025</div>
+                                </div>
+                                
+                                <!-- Achievement 2 -->
+                                <div class="achievement-badge">
+                                    <div class="achievement-badge__icon">
+                                        <img src="assets/images/achievement.svg" alt="Achievement" class="achievement-badge__icon-img">
+                                    </div>
+                                    <div class="achievement-badge__title">Fast Learner</div>
+                                    <div class="achievement-badge__date">May 11, 2025</div>
+                                </div>
+                                
+                                <!-- Achievement 3 -->
+                                <div class="achievement-badge">
+                                    <div class="achievement-badge__icon">
+                                        <img src="assets/images/achievement.svg" alt="Achievement" class="achievement-badge__icon-img">
+                                    </div>
+                                    <div class="achievement-badge__title">First Steps</div>
+                                    <div class="achievement-badge__date">May 8, 2025</div>
+                                </div>
+                                
+                                <!-- Achievement 4 (Locked) -->
+                                <div class="achievement-badge achievement-badge--locked">
+                                    <div class="achievement-badge__icon">
+                                        <img src="assets/images/achievement.svg" alt="Achievement" class="achievement-badge__icon-img">
+                                    </div>
+                                    <div class="achievement-badge__title">Perfect Quiz</div>
+                                    <div class="achievement-badge__date">Locked</div>
+                                </div>
+                                
+                                <!-- Achievement 5 (Locked) -->
+                                <div class="achievement-badge achievement-badge--locked">
+                                    <div class="achievement-badge__icon">
+                                        <img src="assets/images/achievement.svg" alt="Achievement" class="achievement-badge__icon-img">
+                                    </div>
+                                    <div class="achievement-badge__title">Team Builder</div>
+                                    <div class="achievement-badge__date">Locked</div>
+                                </div>
+                                
+                                <!-- Achievement 6 (Locked) -->
+                                <div class="achievement-badge achievement-badge--locked">
+                                    <div class="achievement-badge__icon">
+                                        <img src="assets/images/achievement.svg" alt="Achievement" class="achievement-badge__icon-img">
+                                    </div>
+                                    <div class="achievement-badge__title">Risk Manager</div>
+                                    <div class="achievement-badge__date">Locked</div>
+                                </div>
                             </div>
-                            <div class="achievement-title">Fast Learner</div>
-                            <div class="achievement-date">May 11, 2025</div>
-                        </div>
-                        
-                        <div class="achievement-item">
-                            <div class="achievement-icon">
-                                <img src="assets/images/achievement.svg" alt="Achievement" width="60" height="60">
+                            
+                            <div class="mt-8">
+                                <h3 class="text-xl font-semibold mb-4">Achievement Progress</h3>
+                                
+                                <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px;">
+                                    <div class="card p-4 text-center">
+                                        <h4 class="text-md mb-2 text-secondary">Total Achievements</h4>
+                                        <div class="text-2xl font-bold gradient-text">5 / 20</div>
+                                        <div class="progress mt-2">
+                                            <div class="progress__bar" style="width: 25%;"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card p-4 text-center">
+                                        <h4 class="text-md mb-2 text-secondary">Leadership Badges</h4>
+                                        <div class="text-2xl font-bold gradient-text">3 / 8</div>
+                                        <div class="progress mt-2">
+                                            <div class="progress__bar" style="width: 37.5%;"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card p-4 text-center">
+                                        <h4 class="text-md mb-2 text-secondary">Project Management</h4>
+                                        <div class="text-2xl font-bold gradient-text">1 / 6</div>
+                                        <div class="progress mt-2">
+                                            <div class="progress__bar" style="width: 16.6%;"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card p-4 text-center">
+                                        <h4 class="text-md mb-2 text-secondary">Financial Analysis</h4>
+                                        <div class="text-2xl font-bold gradient-text">1 / 6</div>
+                                        <div class="progress mt-2">
+                                            <div class="progress__bar" style="width: 16.6%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="achievement-title">First Steps</div>
-                            <div class="achievement-date">May 8, 2025</div>
-                        </div>
-                        
-                        <div class="achievement-item">
-                            <div class="achievement-icon locked">
-                                <img src="assets/images/achievement.svg" alt="Achievement" width="60" height="60">
-                            </div>
-                            <div class="achievement-title">Perfect Quiz</div>
-                            <div class="achievement-date">Locked</div>
                         </div>
                     </div>
                     
-                    <h2 class="section-title" style="margin-top: 2rem;">Achievement Progress</h2>
-                    
-                    <div class="achievement-progress">
-                        <div class="progress-stat">
-                            <div class="progress-stat__label">Total Achievements</div>
-                            <div class="progress-stat__value">5 / 20</div>
-                        </div>
-                        
-                        <div class="progress-stat">
-                            <div class="progress-stat__label">Leadership Achievements</div>
-                            <div class="progress-stat__value">3 / 8</div>
-                        </div>
-                        
-                        <div class="progress-stat">
-                            <div class="progress-stat__label">Project Management</div>
-                            <div class="progress-stat__value">1 / 6</div>
-                        </div>
-                        
-                        <div class="progress-stat">
-                            <div class="progress-stat__label">Financial Analysis</div>
-                            <div class="progress-stat__value">1 / 6</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="profile-sidebar">
-                    <h2 class="section-title">Achievement Points</h2>
-                    
-                    <div class="points-summary">
-                        <div class="points-total">
-                            <div class="points-total__value">750</div>
-                            <div class="points-total__label">Total Points</div>
-                        </div>
-                        
-                        <div class="points-breakdown" style="margin-top: 1.5rem;">
-                            <div class="points-category">
-                                <div class="points-category__label">Leadership</div>
-                                <div class="points-category__value">450 pts</div>
+                    <div class="grid-col-12 grid-col-lg-4">
+                        <div class="card p-6 text-center">
+                            <h2 class="text-xl font-bold mb-4">Achievement Points</h2>
+                            
+                            <div class="mb-6">
+                                <div class="points-total__value text-5xl font-black gradient-text mb-2">750</div>
+                                <div class="text-md text-secondary">Total Points Earned</div>
                             </div>
                             
-                            <div class="points-category">
-                                <div class="points-category__label">Project Management</div>
-                                <div class="points-category__value">200 pts</div>
+                            <div class="flex flex-col gap-4 mb-6">
+                                <div class="flex justify-between py-2 border-b border-gray-100">
+                                    <span>Leadership</span>
+                                    <span class="font-semibold text-primary">450 pts</span>
+                                </div>
+                                
+                                <div class="flex justify-between py-2 border-b border-gray-100">
+                                    <span>Project Management</span>
+                                    <span class="font-semibold text-primary">200 pts</span>
+                                </div>
+                                
+                                <div class="flex justify-between py-2 border-b border-gray-100">
+                                    <span>Financial Analysis</span>
+                                    <span class="font-semibold text-primary">100 pts</span>
+                                </div>
                             </div>
                             
-                            <div class="points-category">
-                                <div class="points-category__label">Financial Analysis</div>
-                                <div class="points-category__value">100 pts</div>
-                            </div>
-                        </div>
-                        
-                        <div class="next-achievement" style="margin-top: 2rem;">
-                            <h4 style="margin-bottom: 0.5rem;">Next Achievement</h4>
-                            <div class="next-achievement__item">
-                                <div class="achievement-icon locked" style="width: 40px; height: 40px;">
-                                    <img src="assets/images/achievement.svg" alt="Achievement" width="30" height="30">
+                            <div class="card p-4 mb-6">
+                                <h3 class="text-lg font-semibold mb-3">Next Achievement</h3>
+                                <div class="flex items-center gap-4">
+                                    <div class="achievement-badge__icon" style="width: 50px; height: 50px;">
+                                        <img src="assets/images/achievement.svg" alt="Achievement" style="width: 30px; height: 30px;">
+                                    </div>
+                                    <div>
+                                        <div class="font-semibold">Project Master</div>
+                                        <div class="text-sm text-secondary">2/3 project courses completed</div>
+                                    </div>
                                 </div>
-                                <div class="next-achievement__info">
-                                    <div class="next-achievement__title">Project Master</div>
-                                    <div class="next-achievement__progress">2/3 project courses completed</div>
+                                <div class="progress mt-3">
+                                    <div class="progress__bar" style="width: 66%;"></div>
                                 </div>
                             </div>
+                            
+                            <button class="button button--secondary w-full">View Leaderboard</button>
                         </div>
                     </div>
                 </div>
